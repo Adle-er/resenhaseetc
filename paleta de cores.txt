@@ -1,0 +1,10 @@
+RGB(65, 105, 226, 89) #4169E2 - Principal
+
+RGB(36, 58, 125, 39) #243A7D - Secundária
+
+RGB(73, 118, 252, 99) #4976FC - Clara
+
+RGB(18, 29, 61, 24) #121D3D - Escura
+
+RGB(66, 106, 227, 89) #426AE3 - Complemento
+
