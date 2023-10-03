@@ -25,7 +25,7 @@
 @media (max-width: 768px) {
     .banner {
         background: #4976FC;
-        background-image: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(../imagens/background-mb.jpg);
+        background-image: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
     }
     .banner-buttons {     
         flex-direction: column;
