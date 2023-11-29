@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resenhas e ETC</title>
+    <title>Livros</title>
     <link rel="shortcut icon" href="assets/imagens/favicon.jpg" />
-    <link rel="stylesheet" href="assets/css/style.css">  
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/menu.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.css" >
-    <link rel="stylesheet" href="assets/css/brands.css" >
-    <link rel="stylesheet" href="assets/css/solid.css" >
-    <link rel="stylesheet" href="assets/css/banner.css">  
-    <link rel="stylesheet" href="assets/css/scrollbar.css">   
+    <link rel="stylesheet" href="assets/css/footer.css"> 
+    <link href="assets/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/css/brands.css" rel="stylesheet">
+    <link href="assets/css/solid.css" rel="stylesheet">    
+    <link rel="stylesheet" href="assets/css/cards-conteudo.css">
+    <link href="css/cards.scss" rel="stylesheet">
     <script src="assets/js/javascript.js"></script>
 </head>
 
@@ -35,9 +35,6 @@
             <div>
                 <a href="index.html" title="Home">
                     <img src="assets/imagens/logo.png" class="logo" alt="Resenhas e ETC">
-                </a>
-                <a href="index.html" title="Home">
-                    <img src="assets/imagens/logo2.png" class="logo2" alt="Resenhas e ETC">
                 </a>
             </div>
         </div>
@@ -66,22 +63,41 @@
     </header>
 
     <main>
-
-        <div class="banner">
-
-            <div class="banner-img">
-                <img src="assets/imagens/logo2.png" alt="Logo Resenhas e ETC">
-            </div>
-
-            <div class="banner-buttons">
-                <div><a href="sobre.html" title="O Resenhas e ETC" class="btn">O Resenhas</a></div>
-                <div><a href="conteudos.html" title="Conteúdos" class="btn">Conteúdos</a></div>
-            </div>
-
-        </div>
-
+        <section class="card-section">
+            <div class="card-grid">
+                <a class="card" href="#">
+                    <div class="card__background"
+                        style="background-image: url('./assets/imagens/capa-1984.jpg')">
+                    </div>
+                    <div class="card__content">
+                        <p class="card__category">Resenhando</p>
+                        <h3 class="card__heading">1984</h3>
+                        <p class="card__category">O grande irmão lhe observa</p>
+                    </div>
+                </a>
+                <a class="card" href="#">
+                    <div class="card__background"
+                        style="background-image: url('./assets/imagens/capa-sapiens.jpg')">
+                    </div>
+                    <div class="card__content">
+                        <p class="card__category">Resenhando</p>
+                        <h3 class="card__heading">Sapiens</h3>
+                        <p class="card__category">Uma breve história da humanidade</p>
+                    </div>
+                </a>
+                <a class="card" href="#">
+                    <div class="card__background"
+                        style="background-image: url('./assets/imagens/capa-it.jpg')">
+                    </div>
+                    <div class="card__content">
+                        <p class="card__category">Resenhando</p>
+                        <h3 class="card__heading">It</h3>
+                        <p class="card__category">Seja feliz por ser um otário</p>
+                    </div>
+                </a>
+            <div>
+        </section>
     </main>
-
 
     <footer>
         <div class="footer-content">
