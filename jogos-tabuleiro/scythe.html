@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scythe — Resenhas & Etc</title>
+    <meta name="description" content="Scythe: A dieselpunk board game. Resenha completa, preço e opções de aluguel.">
+    <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="icon" type="image/png" href="../images/icone.png">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+    <section class="banner-section"
+        style="position: relative; background: url('/bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+        <a href="../index.html">
+            <img src="/logo-banner.png" alt="Logo Resenhas e Etc"
+                style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       MAIN NAVIGATION
+  ════════════════════════════════════════════ -->
+    <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
+        <ul class="nav-menu">
+            <li><a href="../index.html">Início</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Jogos de tabuleiro ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Catálogo</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Como funciona</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Alugar agora</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
+                </ul>
+            </li>
+            <li><a href="/sobre.html">Sobre</a></li>
+            <li><a href="javascript:void(0)"
+                    onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        window.filterCategory = function (cat) { window.location.href = '/index.html?cat=' + cat; };
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+       DETAIL CONTAINER
+  ════════════════════════════════════════════ -->
+    <main class="detail-container" id="detail-container">
+
+        <nav aria-label="breadcrumb" class="breadcrumb-container">
+            <ul class="breadcrumb">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html?cat=tabuleiro" id="breadcrumb-category">Jogos de tabuleiro</a></li>
+                <li class="active" aria-current="page" id="breadcrumb-title">Scythe</li>
+            </ul>
+        </nav>
+
+        <div class="detail-grid">
+
+            <!-- ── LEFT: Cover + Quick Info ── -->
+            <div class="detail-cover-wrap">
+                <img id="detail-cover" src="https://cf.geekdo-images.com/7k_nOxclgoHjl86W8Y60Yw__itemrep/img/S9f-7pG9zYv-576f7-i-86-6-8-0/fit-in/400x400/filters:strip_icc()/pic2740445.jpg" alt="Scythe" class="detail-cover" loading="eager">
+                <div class="detail-quick-info" role="list" aria-label="Informações rápidas">
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">👥 Jogadores</span>
+                        <span class="quick-info-value" id="qi-players">1-5 jogadores</span>
+                    </div>
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">⏱ Tempo médio</span>
+                        <span class="quick-info-value" id="qi-time">90-115 min</span>
+                    </div>
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">🔞 Idade</span>
+                        <span class="quick-info-value" id="qi-age">+14 anos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── RIGHT: Info + Pricing + Calendar ── -->
+            <div class="detail-info">
+
+                <!-- Header -->
+                <div class="detail-header">
+                    <div class="detail-badges">
+                        <span class="detail-badge" id="detail-cat-badge">♟️ Jogos de tabuleiro</span>
+                    </div>
+                    <h1 class="detail-title" id="detail-title">Scythe</h1>
+                    <div class="detail-rating" aria-label="Avaliação">
+                        <div class="stars" id="detail-stars" aria-hidden="true">★★★★☆</div>
+                        <span class="rating-text" id="detail-rating-text">4.9 / 5.0</span>
+                    </div>
+                    <p class="detail-desc" id="detail-desc">A dieselpunk board game</p>
+                </div>
+
+                <!-- ── ABOUT GAME SECTION ── -->
+                <section class="detail-block synopsis-section" aria-label="Sobre o jogo">
+                    <h2>📖 Sobre o jogo</h2>
+                    <div id="detail-synopsis" class="detail-synopsis"><p>Scythe is a board game for 1-5 players set in an alternate-history 1920s period. It is a game of farming and war, broken hearts and rusted gears, innovation and valor.</p></div>
+                </section>
+
+                <!-- ── PRICING SECTION ── -->
+                
+                <!-- ── ACTIONS (COMPRAR / ALUGAR) ── -->
+                <section class="actions-section" style="margin-top: 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <button class="btn-primary" id="btn-alugar" style="background-color: var(--secondary); border:none; cursor: pointer;">📅 Alugar</button>
+                    <a href="#" class="btn-primary" id="btn-buy" target="_blank" rel="noopener noreferrer">🛒 Ver onde comprar</a>
+                </section>
+
+
+                </div><!-- /detail-info -->
+        </div><!-- /detail-grid -->
+    </main>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" role="alert" aria-live="assertive">
+        <span class="toast-icon" aria-hidden="true">ℹ️</span>
+        <div>
+            <div class="toast-title" id="toast-title"></div>
+            <div class="toast-msg" id="toast-msg"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">🎲 Resenhas & Etc</div>
+                <p>Seu portal de referência para jogos de tabuleiro, digitais, quadrinhos, livros e filmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="../index.html">Voltar ao Portal</a></li>
+                    <li><a href="../index.html#tabuleiro">Jogos de Tabuleiro</a></li>
+                    <li><a href="../index.html#digital">Jogos Digitais</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="/sobre.html">Sobre nós</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">E-mail</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Resenhas & Etc. Todos os direitos reservados.</span>
+        </div>
+    </footer>
+
+        <script src="../js/data.js?v=2"></script>
+    <script src="../js/game.js?v=2"></script>
+</body>
+
+</html>

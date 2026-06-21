@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre nós — Resenhas & Etc</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <style>
+    .about-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 3rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      color: var(--text-base);
+    }
+
+    .about-title {
+      color: var(--primary);
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .about-content h2 {
+      color: var(--text-dark);
+      margin: 2.5rem 0 1rem;
+      font-size: 1.5rem;
+    }
+
+    .back-btn-about {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-btn-about:hover {
+      color: var(--primary-dark);
+    }
+  </style>
+  <link rel="icon" type="image/png" href="images/icone.png">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════ HERO ════════════════════════════════════════════ -->
+  <section class="banner-section"
+    style="position: relative; background: url('bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+    <a href="index.html">
+      <img src="logo-banner.png" alt="Logo Resenhas e Etc"
+        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ MAIN NAVIGATION ════════════════════════════════════════════ -->
+  <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
+    <ul class="nav-menu">
+      <li><a href="index.html">Início</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
+          <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
+          <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
+          <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Jogos de tabuleiro ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Catálogo</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Como funciona</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Alugar agora</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
+        </ul>
+      </li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="javascript:void(0)"
+          onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    window.filterCategory = function (cat) { window.location.href = 'index.html?cat=' + cat; };
+  </script>
+
+  <main class="about-container">
+    <nav aria-label="breadcrumb" class="breadcrumb-container">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Início</a></li>
+        <li class="active" aria-current="page">Sobre</li>
+      </ul>
+    </nav>
+
+    <h1 class="about-title">Sobre o Resenhas & Etc</h1>
+
+    <div class="about-content">
+      <p>Bem-vindo ao <strong>Resenhas & Etc</strong>! Um projeto de um apaixonado por histórias contadas nas mais
+        variadas mídias: jogos de tabuleiro, videogames, quadrinhos, literatura, cinema, TV, etc. Ao mesmo tempo, nunca
+        tive tanta oportunidade de compartilhar isso com ninguém. Desta forma, nasce o Resenhas & Etc, com o objetivo de
+        criar um espaço onde dicas, análises e, principalmente, debates possam acontecer de forma inteligente e
+        respeitosa.</p>
+
+      <h2>A história por trás do Resenhas</h2>
+
+      <p>Minha paixão por videogames começou por volta dos meus 05, 06 anos quando meu pai, também fã de jogos, nos
+        presenteou com um SNES. Eu e meus irmãos amamos; no entanto, como havia apenas um controle, foi motivo de muitas
+        brigas também... Tempos depois, lembro-me de ter ganho um Nintendo 64, o que coincidiu com a minha época de
+        fliperamas, onde conheci Cadillacs and Dinosaurs, Captain Comando, Sunset Riders, Metal Slug, etc...</p>
+
+      <p>Foi então que passei a jogar mais fora do que dentro de casa, tendo em vista que ver o pessoal jogando no
+        fliperama também era uma forma de lazer. Analisando isso, meus pais acabaram trocando ou vendendo (não lembro) o
+        nosso Nintendo 64 por um Mega Drive, mantendo assim o SNES e o Mega na esperança de que eu parasse de ir ao
+        fliperama. No entanto, jogar com a galera era mais legal e nada mudou.</p>
+
+      <p>De lá pra cá, passei a acompanhar todas as gerações possíveis de videogames, seja jogando na casa de amigos ou
+        lendo matérias sobre. Hoje, vejo que jogar videogame — que foi a minha porta de entrada para cultura pop no
+        geral, e a partir dessa mídia passei a me interessar por livros, filmes, séries e quadrinhos — não é apenas
+        diversão. É a minha válvula de escape, um compromisso comigo e com as histórias que crio em minha mente.</p>
+
+      <h2>Aluguel de jogos</h2>
+
+      <p>Dito isso, hoje entendo também que boas histórias podem ser criadas a partir de experiências vividas e, desta
+        forma, decidi ir um pouco mais além e abrir parte da minha coleção de jogos para o serviço de aluguel! Quero que
+        você viva experiências incríveis e descubra novos mundos sem precisar investir o valor total de um jogo. É a
+        minha forma de espalhar a jogatina e garantir que a diversão chegue a mais pessoas de um jeito simples, prático
+        e acessível.</p>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">🎲 Resenhas & Etc</div>
+        <p>Seu portal de referência para jogos de tabuleiro, digitais, quadrinhos, livros e filmes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Resenhas & Etc. Todos os direitos reservados.</span>
+      <span>Feito com 🎲 para amantes de jogos e cultura</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>

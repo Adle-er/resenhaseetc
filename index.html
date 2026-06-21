@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resenhas & Etc — Portal de Jogos, Livros e Filmes</title>
+  <meta name="description"
+    content="Portal de resenhas, dicas e indicações de jogos de tabuleiro, digitais, quadrinhos, livros e filmes. Alugue jogos de tabuleiro com disponibilidade em tempo real.">
+  <meta name="keywords"
+    content="jogos de tabuleiro, jogos digitais, quadrinhos, livros, filmes, aluguel de jogos, resenhas, indicações">
+  <meta property="og:title" content="Resenhas & Etc">
+  <meta property="og:description"
+    content="Portal de resenhas e aluguel de jogos de tabuleiro, digitais, quadrinhos, livros e filmes.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="icon" type="image/png" href="images/icone.png">
+</head>
+
+<body>
+
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="banner-section"
+    style="position: relative; background: url('bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+    <a href="index.html">
+      <img src="logo-banner.png" alt="Logo Resenhas e Etc"
+        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
+    <ul class="nav-menu">
+      <li><a href="index.html">Início</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
+          <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
+          <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
+          <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Jogos de tabuleiro ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Catálogo</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Como funciona</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Alugar agora</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
+        </ul>
+      </li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="javascript:void(0)"
+          onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════ -->
+  <main class="main-content" id="main-content" aria-live="polite">
+    <div id="main-area"></div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">🎲 Resenhas & Etc</div>
+        <p>Seu portal de referência para jogos de tabuleiro, digitais, quadrinhos, livros e filmes. Resenhas honestas,
+          dicas e aluguel de jogos.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="#" onclick="filterCategory('tabuleiro');return false;">Jogos de Tabuleiro</a></li>
+          <li><a href="#" onclick="filterCategory('digital');return false;">Jogos Digitais</a></li>
+          <li><a href="#" onclick="filterCategory('quadrinhos');return false;">Quadrinhos</a></li>
+          <li><a href="#" onclick="filterCategory('livros');return false;">Livros</a></li>
+          <li><a href="#" onclick="filterCategory('filmes');return false;">Filmes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Aluguel</h4>
+        <ul>
+          <li><a href="#" onclick="filterCategory('tabuleiro');return false;">Como funciona</a></li>
+          <li><a href="#" onclick="filterCategory('tabuleiro');return false;">Jogos disponíveis</a></li>
+          <li><a href="#">Regras de aluguel</a></li>
+          <li><a href="#">Frete e entrega</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Resenhas & Etc. Todos os direitos reservados.</span>
+      <span>Feito com 🎲 para amantes de jogos e cultura</span>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive">
+    <span class="toast-icon" aria-hidden="true">ℹ️</span>
+    <div>
+      <div class="toast-title" id="toast-title"></div>
+      <div class="toast-msg" id="toast-msg"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
+</body>
+
+</html>

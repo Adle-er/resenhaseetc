@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Epic Dungeons — Resenhas & Etc</title>
+    <meta name="description"
+        content="Tiny Epic Dungeons: Tiny Epic Dungeons é um jogo cooperativo de exploração onde heróis destemidos correm contra o tempo. Explore masmorras aleatórias, enfrente monstros, desarme armadilhas e colete saques épicos para conseguir derrotar o chefe supremo antes que a tocha do seu grupo se apague.. Resenha completa, preço e opções de aluguel.">
+    <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="icon" type="image/png" href="../images/icone.png">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+    <section class="banner-section"
+        style="position: relative; background: url('../bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+        <a href="../index.html">
+            <img src="../logo-banner.png" alt="Logo Resenhas e Etc"
+                style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       MAIN NAVIGATION
+  ════════════════════════════════════════════ -->
+    <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
+        <ul class="nav-menu">
+            <li><a href="../index.html">Início</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
+                    <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Jogos de tabuleiro ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Catálogo</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Como funciona</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Alugar agora</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
+                </ul>
+            </li>
+            <li><a href="/sobre.html">Sobre</a></li>
+            <li><a href="javascript:void(0)"
+                    onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        window.filterCategory = function (cat) { window.location.href = '/index.html?cat=' + cat; };
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+       DETAIL CONTAINER
+  ════════════════════════════════════════════ -->
+    <main class="detail-container" id="detail-container">
+
+        <nav aria-label="breadcrumb" class="breadcrumb-container">
+            <ul class="breadcrumb">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html?cat=tabuleiro" id="breadcrumb-category">Jogos de tabuleiro</a></li>
+                <li class="active" aria-current="page" id="breadcrumb-title">Tiny Epic Dungeons</li>
+            </ul>
+        </nav>
+
+        <div class="detail-grid">
+
+            <!-- ── LEFT: Cover + Quick Info ── -->
+            <div class="detail-cover-wrap">
+                <img id="detail-cover" src="resenha-tiny-epic-dungeons.jpg" alt="Tiny Epic Dungeons"
+                    class="detail-cover" loading="eager">
+                <div class="detail-quick-info" role="list" aria-label="Informações rápidas">
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">👥 Jogadores</span>
+                        <span class="quick-info-value" id="qi-players">1–4 jogadores</span>
+                    </div>
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">⏱ Tempo médio</span>
+                        <span class="quick-info-value" id="qi-time">30–60 min</span>
+                    </div>
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">🔞 Idade</span>
+                        <span class="quick-info-value" id="qi-age">+14 anos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── RIGHT: Info + Pricing + Calendar ── -->
+            <div class="detail-info">
+
+                <!-- Header -->
+                <div class="detail-header">
+                    <div class="detail-badges">
+                        <span class="detail-badge" id="detail-cat-badge">♟️ Jogos de tabuleiro</span>
+                    </div>
+                    <h1 class="detail-title" id="detail-title">Tiny Epic Dungeons</h1>
+                    <div class="detail-rating" aria-label="Avaliação">
+                        <div class="stars" id="detail-stars" aria-hidden="true">★★★★☆</div>
+                        <span class="rating-text" id="detail-rating-text">4.0 / 5.0</span>
+                    </div>
+                    <p class="detail-desc" id="detail-desc">Tiny Epic Dungeons é um jogo cooperativo de exploração onde
+                        heróis destemidos correm contra o tempo. Explore masmorras aleatórias, enfrente monstros,
+                        desarme armadilhas e colete saques épicos para conseguir derrotar o chefe supremo antes que a
+                        tocha do seu grupo se apague.</p>
+                </div>
+
+                <!-- ── ABOUT GAME SECTION ── -->
+                <section class="detail-block synopsis-section" aria-label="Sobre o jogo">
+                    <h2>📖 Sobre o jogo</h2>
+                    <div id="detail-synopsis" class="detail-synopsis">
+                        <p>Tiny Epic Dungeons prova que tamanho não é documento no mundo dos board games. Se você procura a experiência completa de um dungeon crawler, mas não tem uma mesa gigantesca ou três horas livres, este jogo é pra você!</p>
+
+                        <p>Muitos jogos de masmorra assustam pelo excesso de regras e manuais que parecem enciclopédias. Tiny Epic Dungeons vai na contramão: o fluxo de jogo é lógico e altamente intuitivo. Em poucos turnos, você já decorou a dinâmica de movimentação, combate e gerenciamento de tempo.</p>
+
+                        <p>É o tipo de jogo fácil de colocar na mesa e explicar para novos jogadores sem perder a noite inteira na explicação.</p>
+
+                        <p>Além disso, se você curte jogar sozinho, encontrou um prato cheio. O modo solo de Tiny Epic Dungeons não parece uma adaptação de última hora; ele é redondo, desafiador e imersivo.</p>
+
+                        <p>Como o jogo roda de forma fluida e a 'mesa' se adapta perfeitamente, a jornada é ágil, tensa na medida certa e altamente recompensadora. Você comanda um grupo de heróis contra o relógio, o que garante decisões estratégicas a cada segundo.</p>
+                        
+                        <h2>Variedade de heróis</h2>
+                      
+                        <p>De 'tiny' temos só o nome, a quantidade de personagens do jogo impressiona, cada herói possui com habilidades únicas, atributos bem definidos e, miniaturas lindíssimas. Essa variedade permite que você teste diferentes sinergias de equipe a cada partida. Jogar com um guerreiro focado em dano bruto é totalmente diferente de montar uma estratégia baseada em magias e agilidade.</p>
+
+                        <h2>Rejogabilidade infinita com mapas dinâmicos</h2>
+                     
+                        <p>E, na minha opinião, aqui está o maior trunfo de Tiny Epic Dungeons, com a exploração às cegas, o mapa nunca será o mesmo:</p>
+                        
+                        <ul>
+                            <li><b>Exploração aleatória</b>: A masmorra são é reveladas conforme você avança pelas salas.</li>
+                            <li><b>Cenários imprevisíveis</b>: Em uma partida, o covil do chefe pode estar logo na esquina; em outra, você precisará andar em círculos (e a tocha se apagando).</li>
+                            <li><b>Perigo constante</b>: Goblins e lacaios surgem em locais inesperados, forçando você a mudar de tática em tempo real e, além disso, armadilhas também podem não só te dar dano, como também fazer você perder o seu precioso tempo.</li>
+                        </ul>
+
+                        <p>Essa imprevisibilidade garante que nenhuma partida seja igual à anterior, elevando o fator de rejogabilidade ao nível máximo.</p>
+                    </div>
+                </section>
+
+                <!-- ── PRICING SECTION ── -->
+
+                <!-- ── ACTIONS (COMPRAR / ALUGAR) ── -->
+                <section class="actions-section"
+                    style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <button class="btn-primary" id="btn-alugar"
+                        style="background: var(--orange); color: var(--white); font-size: 1rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .25rem .7rem; border-radius: 50px;">Alugar</button>
+                    <a href="#" class="btn-primary" id="btn-buy"
+                        style="background: var(--orange); color: var(--white); font-size: 1rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .25rem .7rem; border-radius: 50px; line-height: normal;">Ver onde comprar</a>
+                </section>
+
+
+            </div><!-- /detail-info -->
+        </div><!-- /detail-grid -->
+    </main>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" role="alert" aria-live="assertive">
+        <span class="toast-icon" aria-hidden="true">ℹ️</span>
+        <div>
+            <div class="toast-title" id="toast-title"></div>
+            <div class="toast-msg" id="toast-msg"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">🎲 Resenhas & Etc</div>
+                <p>Seu portal de referência para jogos de tabuleiro, digitais, quadrinhos, livros e filmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="../index.html">Voltar ao Portal</a></li>
+                    <li><a href="../index.html#tabuleiro">Jogos de Tabuleiro</a></li>
+                    <li><a href="../index.html#digital">Jogos Digitais</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="/sobre.html">Sobre nós</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">E-mail</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Resenhas & Etc. Todos os direitos reservados.</span>
+        </div>
+    </footer>
+
+    <script src="../js/data.js?v=2"></script>
+    <script src="../js/game.js?v=2"></script>
+</body>
+
+</html>
