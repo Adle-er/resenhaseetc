@@ -71,7 +71,6 @@ const CATALOG = [
     "reviewOnly": true,
     "tagline": "A épica saga de ficção científica que inspirou gerações.",
     "cover": "images/metro-233.jpg",
-    "coverDetail": "images/resenha-metro-2033.jpg",
     "rating": 4.9,
     "playTime": "~20 horas de leitura",
     "ageRating": "+14 anos",
