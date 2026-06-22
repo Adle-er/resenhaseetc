@@ -69,7 +69,7 @@ const CATALOG = [
     "title": "Metro 2033",
     "category": "livros",
     "reviewOnly": true,
-    "tagline": "A épica saga de ficção científica que inspirou gerações.",
+    "tagline": "Conheça a brilhante e claustrofóbica distopia pós-apocalíptica de Dmitriy Glukhovskiy. Acompanhe a jornada de Artyom pelos túneis do metrô de Moscou em uma jornada profunda que desafia a sobrevivência humana e um plot twist arrebatador. Vale mais a pena que o jogo? Descubra!",
     "cover": "images/metro-2033.jpg",
     "rating": 3.0,
     "featured": true,
