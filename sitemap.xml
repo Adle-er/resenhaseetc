@@ -37,12 +37,12 @@
 
   <!-- Resenhas e Artigos -->
   <url>
-    <loc>https://www.resenhaseetc.com.br/metro-2033</loc>
+    <loc>https://www.resenhaseetc.com.br/livros/metro-2033</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.resenhaseetc.com.br/tiny-epic-dungeons</loc>
+    <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/tiny-epic-dungeons</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
