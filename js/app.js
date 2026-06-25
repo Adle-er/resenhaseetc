@@ -145,11 +145,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── SECTION WITH CARDS ────────────────────────────────
     function renderSection(container, cat, items) {
+        const urlSlugs = {
+            'tabuleiro': 'jogos',
+            'digital': 'jogos',
+            'livros': 'livros',
+            'quadrinhos': 'quadrinhos',
+            'filmes': 'filmes-series'
+        };
+
+        const slug = urlSlugs[cat.id] || cat.id;
+        
+        let sectionUrl = `/resenhas/${slug}`;
+        if (cat.id === 'tabuleiro') {
+            sectionUrl = `/jogos-tabuleiro`;
+        }
+
         const section = document.createElement('div');
         section.innerHTML = `
       <div class="section-header">
         <h2 class="section-title">${cat.icon} ${cat.label}</h2>
-        <button class="section-link" onclick="filterCategory('${cat.id}')">Ver todos →</button>
+        <a href="${sectionUrl}" class="section-link" style="text-decoration: none;">Ver todos →</a>
       </div>
     `;
         section.appendChild(createCardGrid(items));
@@ -211,22 +226,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── HELPERS ───────────────────────────────────────────
     function goToGame(item) {
-    const categorySlugs = {
-        tabuleiro: 'jogos-tabuleiro',
-        digital: 'jogos-digitais',
-        quadrinhos: 'quadrinhos',
-        livros: 'livros',
-        filmes: 'filmes'
-    };
-    const slug = categorySlugs[item.category] || item.category;
-    
-    // Se for jogo de tabuleiro, abre na raiz antiga. Se for outra coisa, coloca /resenhas/
-    if (item.category === 'tabuleiro') {
-        window.location.href = `/${slug}/${item.id}`;
-    } else {
-        window.location.href = `/resenhas/${slug}/${item.id}`;
+        const categorySlugs = {
+            tabuleiro: 'jogos-tabuleiro',
+            digital: 'jogos-digitais',
+            quadrinhos: 'quadrinhos',
+            livros: 'livros',
+            filmes: 'filmes'
+        };
+        const slug = categorySlugs[item.category] || item.category;
+        
+        if (item.category === 'tabuleiro') {
+            window.location.href = `/${slug}/${item.id}`;
+        } else {
+            window.location.href = `/resenhas/${slug}/${item.id}`;
+        }
     }
-}
 
     function getCatLabel(catId) {
         const c = CATEGORIES.find(c => c.id === catId);
