@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hades — Resenhas & Etc</title>
-    <meta name="description" content="Hades: Fuja do submundo grego em roguelike premiado.. Resenha completa, preço e opções de aluguel.">
+    <title>Hollow Knight — Resenhas & Etc</title>
+    <meta name="description" content="Hollow Knight: Explore um reino subterrâneo de insetos em decadência.. Resenha completa, preço e opções de aluguel.">
     <link rel="stylesheet" href="../css/style.css?v=2">
   <link rel="icon" type="image/png" href="../images/icone.png">
 </head>
@@ -28,14 +28,14 @@
   ════════════════════════════════════════════ -->
     <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
         <ul class="nav-menu">
-            <li><a href="../">Início</a></li>
+            <li><a href="/">Início</a></li>
             <li class="dropdown">
-                <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+                <a href="javascript:void(0)" class="no-pointer">Resenhas ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+                    <li><a href="/resenhas/livros">Livros</a></li>
+                    <li><a href="/resenhas/jogos">Jogos</a></li>
+                    <li><a href="/resenhas/quadrinhos">Quadrinhos</a></li>
+                    <li><a href="/resenhas/filmes-series">Filmes/Séries</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -47,7 +47,7 @@
                     <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
                 </ul>
             </li>
-            <li><a href="../sobre">Sobre</a></li>
+            <li><a href="/sobre">Sobre</a></li>
             <li><a href="javascript:void(0)"
                     onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
         </ul>
@@ -66,7 +66,7 @@
             <ul class="breadcrumb">
                 <li><a href="../">Início</a></li>
                 <li><a href="../index.html?cat=digital" id="breadcrumb-category">Jogos digitais</a></li>
-                <li class="active" aria-current="page" id="breadcrumb-title">Hades</li>
+                <li class="active" aria-current="page" id="breadcrumb-title">Hollow Knight</li>
             </ul>
         </nav>
 
@@ -74,7 +74,7 @@
 
             <!-- ── LEFT: Cover + Quick Info ── -->
             <div class="detail-cover-wrap">
-                <img id="detail-cover" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=550&fit=crop&q=80" alt="Hades" class="detail-cover" loading="eager">
+                <img id="detail-cover" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=550&fit=crop&q=80" alt="Hollow Knight" class="detail-cover" loading="eager">
                 <div class="detail-quick-info" role="list" aria-label="Informações rápidas">
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">👥 Jogadores</span>
@@ -82,11 +82,11 @@
                     </div>
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">⏱ Tempo médio</span>
-                        <span class="quick-info-value" id="qi-time">60–100 horas</span>
+                        <span class="quick-info-value" id="qi-time">40–60 horas</span>
                     </div>
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">🔞 Idade</span>
-                        <span class="quick-info-value" id="qi-age">+16 anos</span>
+                        <span class="quick-info-value" id="qi-age">+10 anos</span>
                     </div>
                 </div>
             </div>
@@ -99,18 +99,18 @@
                     <div class="detail-badges">
                         <span class="detail-badge" id="detail-cat-badge">🎮 Jogos digitais</span>
                     </div>
-                    <h1 class="detail-title" id="detail-title">Hades</h1>
+                    <h1 class="detail-title" id="detail-title">Hollow Knight</h1>
                     <div class="detail-rating" aria-label="Avaliação">
                         <div class="stars" id="detail-stars" aria-hidden="true">★★★★☆</div>
-                        <span class="rating-text" id="detail-rating-text">4.8 / 5.0</span>
+                        <span class="rating-text" id="detail-rating-text">4.9 / 5.0</span>
                     </div>
-                    <p class="detail-desc" id="detail-desc">Fuja do submundo grego em roguelike premiado.</p>
+                    <p class="detail-desc" id="detail-desc">Explore um reino subterrâneo de insetos em decadência.</p>
                 </div>
 
                 <!-- ── ABOUT GAME SECTION ── -->
                 <section class="detail-block synopsis-section" aria-label="Sobre o jogo">
                     <h2>📖 Sobre o jogo</h2>
-                    <div id="detail-synopsis" class="detail-synopsis"><p>Hades é um roguelike da Supergiant Games onde você joga como Zagreus, filho do Deus Hades, tentando escapar do mundo dos mortos. Com narrativa brilhante, combate fluido e trilha sonora incrível, ganhou inúmeros prêmios.</p></div>
+                    <div id="detail-synopsis" class="detail-synopsis"><p>Hollow Knight é um metroidvania desafiador e belíssimo desenvolvido pela Team Cherry. Explore o vasto e misterioso mundo de Hallownest, derrotando inimigos e descobrindo segredos em cada canto desse reino de insetos.</p></div>
                 </section>
 
                                 <!-- ── ACTIONS (COMPRAR / ALUGAR) ── -->

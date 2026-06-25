@@ -1739,3 +1739,7 @@ footer {
     height: 180px
   }
 }
+
+.no-pointer {
+  cursor: default !important;
+}

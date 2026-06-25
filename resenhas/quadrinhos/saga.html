@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2001: Uma Odisseia no Espaço — Resenhas & Etc</title>
-    <meta name="description" content="2001: Uma Odisseia no Espaço: A obra-prima de Kubrick que definiu a ficção científica.. Resenha completa, preço e opções de aluguel.">
+    <title>Saga — Vol. 1 — Resenhas & Etc</title>
+    <meta name="description" content="Saga — Vol. 1: Sci-fi épico sobre amor, guerra e família no espaço.. Resenha completa, preço e opções de aluguel.">
     <link rel="stylesheet" href="../css/style.css?v=2">
   <link rel="icon" type="image/png" href="../images/icone.png">
 </head>
@@ -28,14 +28,14 @@
   ════════════════════════════════════════════ -->
     <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
         <ul class="nav-menu">
-            <li><a href="../">Início</a></li>
+            <li><a href="/">Início</a></li>
             <li class="dropdown">
-                <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+                <a href="javascript:void(0)" class="no-pointer">Resenhas ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+                    <li><a href="/resenhas/livros">Livros</a></li>
+                    <li><a href="/resenhas/jogos">Jogos</a></li>
+                    <li><a href="/resenhas/quadrinhos">Quadrinhos</a></li>
+                    <li><a href="/resenhas/filmes-series">Filmes/Séries</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -47,7 +47,7 @@
                     <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
                 </ul>
             </li>
-            <li><a href="../sobre">Sobre</a></li>
+            <li><a href="/sobre">Sobre</a></li>
             <li><a href="javascript:void(0)"
                     onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
         </ul>
@@ -65,8 +65,8 @@
         <nav aria-label="breadcrumb" class="breadcrumb-container">
             <ul class="breadcrumb">
                 <li><a href="../">Início</a></li>
-                <li><a href="../index.html?cat=filmes" id="breadcrumb-category">Filmes</a></li>
-                <li class="active" aria-current="page" id="breadcrumb-title">2001: Uma Odisseia no Espaço</li>
+                <li><a href="../index.html?cat=quadrinhos" id="breadcrumb-category">Quadrinhos</a></li>
+                <li class="active" aria-current="page" id="breadcrumb-title">Saga — Vol. 1</li>
             </ul>
         </nav>
 
@@ -74,7 +74,7 @@
 
             <!-- ── LEFT: Cover + Quick Info ── -->
             <div class="detail-cover-wrap">
-                <img id="detail-cover" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=550&fit=crop&q=80" alt="2001: Uma Odisseia no Espaço" class="detail-cover" loading="eager">
+                <img id="detail-cover" src="https://images.unsplash.com/photo-1608613304810-2d4dd52511a2?w=400&h=550&fit=crop&q=80" alt="Saga — Vol. 1" class="detail-cover" loading="eager">
                 <div class="detail-quick-info" role="list" aria-label="Informações rápidas">
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">👥 Jogadores</span>
@@ -82,11 +82,11 @@
                     </div>
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">⏱ Tempo médio</span>
-                        <span class="quick-info-value" id="qi-time">2h 29min</span>
+                        <span class="quick-info-value" id="qi-time">~3 horas de leitura</span>
                     </div>
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">🔞 Idade</span>
-                        <span class="quick-info-value" id="qi-age">Livre</span>
+                        <span class="quick-info-value" id="qi-age">+18 anos</span>
                     </div>
                 </div>
             </div>
@@ -97,20 +97,20 @@
                 <!-- Header -->
                 <div class="detail-header">
                     <div class="detail-badges">
-                        <span class="detail-badge" id="detail-cat-badge">🎬 Filmes</span>
+                        <span class="detail-badge" id="detail-cat-badge">📚 Quadrinhos</span>
                     </div>
-                    <h1 class="detail-title" id="detail-title">2001: Uma Odisseia no Espaço</h1>
+                    <h1 class="detail-title" id="detail-title">Saga — Vol. 1</h1>
                     <div class="detail-rating" aria-label="Avaliação">
                         <div class="stars" id="detail-stars" aria-hidden="true">★★★★☆</div>
                         <span class="rating-text" id="detail-rating-text">4.9 / 5.0</span>
                     </div>
-                    <p class="detail-desc" id="detail-desc">A obra-prima de Kubrick que definiu a ficção científica.</p>
+                    <p class="detail-desc" id="detail-desc">Sci-fi épico sobre amor, guerra e família no espaço.</p>
                 </div>
 
                 <!-- ── ABOUT GAME SECTION ── -->
                 <section class="detail-block synopsis-section" aria-label="Sobre o jogo">
                     <h2>📖 Sobre o jogo</h2>
-                    <div id="detail-synopsis" class="detail-synopsis"><p>Dirigido por Stanley Kubrick em 1968, este épico de ficção científica explora a evolução humana, tecnologia e o contato com inteligência extraterrestre. Visualmente revolucionário, continua sendo um dos filmes mais importantes já realizados.</p></div>
+                    <div id="detail-synopsis" class="detail-synopsis"><p>Saga é uma graphic novel de ficção científica escrita por Brian K. Vaughan e ilustrada por Fiona Staples. A história de Marko e Alana, de raças inimigas, que fogem juntos com seu bebê recém-nascido em um universo em guerra. Adulto, imaginativo e emocionante.</p></div>
                 </section>
 
                                 <!-- ── ACTIONS (COMPRAR / ALUGAR) ── -->

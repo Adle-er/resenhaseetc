@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudo em Todo Lugar ao Mesmo Tempo — Resenhas & Etc</title>
-    <meta name="description" content="Tudo em Todo Lugar ao Mesmo Tempo: Multiverso, kung fu e amor familiar em uma aventura insana.. Resenha completa, preço e opções de aluguel.">
+    <title>2001: Uma Odisseia no Espaço — Resenhas & Etc</title>
+    <meta name="description" content="2001: Uma Odisseia no Espaço: A obra-prima de Kubrick que definiu a ficção científica.. Resenha completa, preço e opções de aluguel.">
     <link rel="stylesheet" href="../css/style.css?v=2">
   <link rel="icon" type="image/png" href="../images/icone.png">
 </head>
@@ -28,14 +28,14 @@
   ════════════════════════════════════════════ -->
     <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
         <ul class="nav-menu">
-            <li><a href="../">Início</a></li>
+            <li><a href="/">Início</a></li>
             <li class="dropdown">
-                <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+                <a href="javascript:void(0)" class="no-pointer">Resenhas ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+                    <li><a href="/resenhas/livros">Livros</a></li>
+                    <li><a href="/resenhas/jogos">Jogos</a></li>
+                    <li><a href="/resenhas/quadrinhos">Quadrinhos</a></li>
+                    <li><a href="/resenhas/filmes-series">Filmes/Séries</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -47,7 +47,7 @@
                     <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
                 </ul>
             </li>
-            <li><a href="../sobre">Sobre</a></li>
+            <li><a href="/sobre">Sobre</a></li>
             <li><a href="javascript:void(0)"
                     onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
         </ul>
@@ -66,7 +66,7 @@
             <ul class="breadcrumb">
                 <li><a href="../">Início</a></li>
                 <li><a href="../index.html?cat=filmes" id="breadcrumb-category">Filmes</a></li>
-                <li class="active" aria-current="page" id="breadcrumb-title">Tudo em Todo Lugar ao Mesmo Tempo</li>
+                <li class="active" aria-current="page" id="breadcrumb-title">2001: Uma Odisseia no Espaço</li>
             </ul>
         </nav>
 
@@ -74,7 +74,7 @@
 
             <!-- ── LEFT: Cover + Quick Info ── -->
             <div class="detail-cover-wrap">
-                <img id="detail-cover" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=550&fit=crop&q=80" alt="Tudo em Todo Lugar ao Mesmo Tempo" class="detail-cover" loading="eager">
+                <img id="detail-cover" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=550&fit=crop&q=80" alt="2001: Uma Odisseia no Espaço" class="detail-cover" loading="eager">
                 <div class="detail-quick-info" role="list" aria-label="Informações rápidas">
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">👥 Jogadores</span>
@@ -82,11 +82,11 @@
                     </div>
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">⏱ Tempo médio</span>
-                        <span class="quick-info-value" id="qi-time">2h 19min</span>
+                        <span class="quick-info-value" id="qi-time">2h 29min</span>
                     </div>
                     <div class="quick-info-item" role="listitem">
                         <span class="quick-info-label">🔞 Idade</span>
-                        <span class="quick-info-value" id="qi-age">+14 anos</span>
+                        <span class="quick-info-value" id="qi-age">Livre</span>
                     </div>
                 </div>
             </div>
@@ -99,18 +99,18 @@
                     <div class="detail-badges">
                         <span class="detail-badge" id="detail-cat-badge">🎬 Filmes</span>
                     </div>
-                    <h1 class="detail-title" id="detail-title">Tudo em Todo Lugar ao Mesmo Tempo</h1>
+                    <h1 class="detail-title" id="detail-title">2001: Uma Odisseia no Espaço</h1>
                     <div class="detail-rating" aria-label="Avaliação">
                         <div class="stars" id="detail-stars" aria-hidden="true">★★★★☆</div>
-                        <span class="rating-text" id="detail-rating-text">4.8 / 5.0</span>
+                        <span class="rating-text" id="detail-rating-text">4.9 / 5.0</span>
                     </div>
-                    <p class="detail-desc" id="detail-desc">Multiverso, kung fu e amor familiar em uma aventura insana.</p>
+                    <p class="detail-desc" id="detail-desc">A obra-prima de Kubrick que definiu a ficção científica.</p>
                 </div>
 
                 <!-- ── ABOUT GAME SECTION ── -->
                 <section class="detail-block synopsis-section" aria-label="Sobre o jogo">
                     <h2>📖 Sobre o jogo</h2>
-                    <div id="detail-synopsis" class="detail-synopsis"><p>Vencedor de 7 Oscars, o filme acompanha Evelyn Wang, uma imigrante chinesa presa a uma vida monótona que descobre que deve conectar-se com versões paralelas de si mesma para salvar o multiverso. Caótico, emocionante e genial.</p></div>
+                    <div id="detail-synopsis" class="detail-synopsis"><p>Dirigido por Stanley Kubrick em 1968, este épico de ficção científica explora a evolução humana, tecnologia e o contato com inteligência extraterrestre. Visualmente revolucionário, continua sendo um dos filmes mais importantes já realizados.</p></div>
                 </section>
 
                                 <!-- ── ACTIONS (COMPRAR / ALUGAR) ── -->

@@ -29,14 +29,14 @@
   ════════════════════════════════════════════ -->
     <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
         <ul class="nav-menu">
-            <li><a href="../">Início</a></li>
+            <li><a href="/">Início</a></li>
             <li class="dropdown">
-                <a href="javascript:void(0)" onclick="filterCategory('todos')">Resenhas ▾</a>
+                <a href="javascript:void(0)" class="no-pointer">Resenhas ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)" onclick="filterCategory('livros')">Livros</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('digital')">Jogos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('quadrinhos')">Quadrinhos</a></li>
-                    <li><a href="javascript:void(0)" onclick="filterCategory('filmes')">Filmes/Séries</a></li>
+                    <li><a href="/resenhas/livros">Livros</a></li>
+                    <li><a href="/resenhas/jogos">Jogos</a></li>
+                    <li><a href="/resenhas/quadrinhos">Quadrinhos</a></li>
+                    <li><a href="/resenhas/filmes-series">Filmes/Séries</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -48,7 +48,7 @@
                     <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
                 </ul>
             </li>
-            <li><a href="../sobre">Sobre</a></li>
+            <li><a href="/sobre">Sobre</a></li>
             <li><a href="javascript:void(0)"
                     onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
         </ul>

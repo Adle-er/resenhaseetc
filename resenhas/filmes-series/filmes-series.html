@@ -4,27 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resenhas & Etc — Portal de Jogos, Livros e Filmes</title>
-  <meta name="description" content="Portal de resenhas, dicas e indicações de jogos de tabuleiro, digitais, quadrinhos, livros e filmes. Alugue jogos de tabuleiro com disponibilidade em tempo real.">
-  <meta name="keywords" content="jogos de tabuleiro, jogos digitais, quadrinhos, livros, filmes, aluguel de jogos, resenhas, indicações">
-  <meta property="og:title" content="Resenhas & Etc">
-  <meta property="og:description" content="Portal de resenhas e aluguel de jogos de tabuleiro, digitais, quadrinhos, livros e filmes.">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="css/style.css?v=2">
-  <link rel="icon" type="image/png" href="images/icone.png">
+  <title>Filmes & Séries — Resenhas & Etc</title>
+  <meta name="description" content="Nossas resenhas, dicas e indicações de filmes e séries no Resenhas & Etc.">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="icon" type="image/png" href="../images/icone.png">
 </head>
 
-<body>
-
-
+<body data-category="filmes-series">
 
   <!-- ═══════════════════════════════════════════
        HERO
   ════════════════════════════════════════════ -->
   <section class="banner-section"
-    style="position: relative; background: url('bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+    style="position: relative; background: url('../bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
     <a href="/">
-      <img src="logo-banner.png" alt="Logo Resenhas e Etc"
+      <img src="../logo-banner.png" alt="Logo Resenhas e Etc"
         style="max-width: 100%; max-height: 100%; object-fit: contain;">
     </a>
   </section>
@@ -59,11 +53,38 @@
     </ul>
   </nav>
 
+  <script>
+    window.filterCategory = function (cat) { window.location.href = '/?cat=' + cat; };
+  </script>
+
   <!-- ═══════════════════════════════════════════
        MAIN CONTENT
   ════════════════════════════════════════════ -->
   <main class="main-content" id="main-content" aria-live="polite">
-    <div id="main-area"></div>
+    <div class="category-listing-container" style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+      
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="breadcrumb-container" style="margin-bottom: 2rem;">
+        <ul class="breadcrumb" style="display: flex; gap: 0.5rem; list-style: none; padding: 0;">
+          <li><a href="/" style="color: var(--primary); text-decoration: none; font-weight: 600;">Início</a></li>
+          <li style="color: var(--text-secondary); font-weight: 600;">/</li>
+          <li class="active" aria-current="page" style="color: var(--text); font-weight: 600;">Filmes & Séries</li>
+        </ul>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="category-page-header" style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+        <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 0.8rem; margin: 0 0 0.5rem 0;">
+          🎬 Filmes & Séries
+        </h1>
+        <p style="color: var(--text-secondary); margin: 0; font-size: 1.1rem;">
+          Leia nossas opiniões e análises sobre longas-metragens, documentários e séries.
+        </p>
+      </div>
+
+      <!-- Dynamic Cards Grid Container -->
+      <div id="category-grid-container"></div>
+    </div>
   </main>
 
   <!-- ═══════════════════════════════════════════
@@ -98,7 +119,7 @@
       <div class="footer-col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="sobre">Sobre nós</a></li>
+          <li><a href="/sobre">Sobre nós</a></li>
           <li><a href="#">WhatsApp</a></li>
           <li><a href="#">Instagram</a></li>
           <li><a href="#">E-mail</a></li>
@@ -111,8 +132,8 @@
     </div>
   </footer>  
 
-  <script src="js/data.js?v=2"></script>
-  <script src="js/app.js?v=2"></script>
+  <script src="../js/data.js?v=2"></script>
+  <script src="../js/resenhas.js?v=2"></script>
 </body>
 
 </html>
