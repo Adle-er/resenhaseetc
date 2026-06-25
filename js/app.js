@@ -211,16 +211,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── HELPERS ───────────────────────────────────────────
     function goToGame(item) {
-        const categorySlugs = {
-            tabuleiro: 'jogos-tabuleiro',
-            digital: 'jogos-digitais',
-            quadrinhos: 'quadrinhos',
-            livros: 'livros',
-            filmes: 'filmes'
-        };
-        const slug = categorySlugs[item.category] || item.category;
-        window.location.href = `/resenhas/${slug}/${item.id}`;
+    // Se no catálogo a categoria for 'tabuleiro', a função para aqui e ignora o clique
+    if (item.category === 'tabuleiro') {
+        return; 
     }
+
+    const categorySlugs = {
+        tabuleiro: 'jogos-tabuleiro',
+        digital: 'jogos-digitais',
+        quadrinhos: 'quadrinhos',
+        livros: 'livros',
+        filmes: 'filmes'
+    };
+    const slug = categorySlugs[item.category] || item.category;
+    window.location.href = `/resenhas/${slug}/${item.id}`;
+}
 
     function getCatLabel(catId) {
         const c = CATEGORIES.find(c => c.id === catId);
