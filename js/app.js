@@ -211,11 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── HELPERS ───────────────────────────────────────────
     function goToGame(item) {
-    // Se no catálogo a categoria for 'tabuleiro', a função para aqui e ignora o clique
-    if (item.category === 'tabuleiro') {
-        return; 
-    }
-
     const categorySlugs = {
         tabuleiro: 'jogos-tabuleiro',
         digital: 'jogos-digitais',
@@ -224,7 +219,13 @@ document.addEventListener('DOMContentLoaded', () => {
         filmes: 'filmes'
     };
     const slug = categorySlugs[item.category] || item.category;
-    window.location.href = `/resenhas/${slug}/${item.id}`;
+    
+    // Se for jogo de tabuleiro, abre na raiz antiga. Se for outra coisa, coloca /resenhas/
+    if (item.category === 'tabuleiro') {
+        window.location.href = `/${slug}/${item.id}`;
+    } else {
+        window.location.href = `/resenhas/${slug}/${item.id}`;
+    }
 }
 
     function getCatLabel(catId) {
