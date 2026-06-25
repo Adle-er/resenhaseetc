@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filmes: 'filmes'
         };
         const slug = categorySlugs[item.category] || item.category;
-        window.location.href = `/${slug}/${item.id}`;
+        window.location.href = `/resenhas/${slug}/${item.id}`;
     }
 
     function getCatLabel(catId) {
