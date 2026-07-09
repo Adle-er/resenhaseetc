@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
             digital: 'jogos-digitais',
             quadrinhos: 'quadrinhos',
             livros: 'livros',
-            filmes: 'filmes'
+            filmes: 'filmes-series'
         };
         const slug = categorySlugs[item.category] || item.category;
         

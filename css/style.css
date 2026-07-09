@@ -1742,4 +1742,123 @@ footer {
 
 .no-pointer {
   cursor: default !important;
+}
+
+/* ─── GALLERY & LIGHTBOX ─── */
+.gallery-thumb {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.gallery-thumb:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: var(--orange);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Single Image Block within review text */
+.review-img-wrap {
+  margin: 2rem auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.review-img-wrap .gallery-thumb {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: var(--radius);
+}
+
+.review-img-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 1.5rem;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox-overlay.open .lightbox-img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 1.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.lightbox-close:hover {
+  background: var(--white);
+  color: var(--text);
+  transform: scale(1.05);
+}
+
+.lightbox-caption {
+  color: var(--white);
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  font-family: var(--font);
 }

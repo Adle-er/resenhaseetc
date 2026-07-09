@@ -6,6 +6,9 @@ if (document.readyState === 'loading') {
 }
 
 function initRentalLogic() {
+    // Inicializa a galeria de imagens e lightbox
+    initLightbox();
+
     // 1. Deduzir qual jogo estamos vendo a partir do nome do arquivo
     const pathParts = window.location.pathname.split('/');
     let filename = pathParts[pathParts.length - 1] || '';
@@ -167,5 +170,72 @@ function initRentalLogic() {
         
         window.open(whatsappUrl, '_blank');
         modal.style.display = 'none';
+    });
+}
+
+// ─── GALERIA DE IMAGENS & LIGHTBOX ───
+function initLightbox() {
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    if (thumbs.length === 0) return;
+
+    console.log('[game.js] Inicializando lightbox para', thumbs.length, 'thumbnails');
+
+    // Cria o overlay do lightbox se ele não existir
+    let overlay = document.getElementById('lightbox-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'lightbox-overlay';
+        overlay.className = 'lightbox-overlay';
+        overlay.innerHTML = `
+            <div class="lightbox-content">
+                <button class="lightbox-close" aria-label="Fechar">&times;</button>
+                <img class="lightbox-img" src="" alt="Imagem ampliada">
+                <div class="lightbox-caption"></div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        const closeBtn = overlay.querySelector('.lightbox-close');
+
+        // Fechar ao clicar no overlay ou no botão fechar
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay || e.target === closeBtn) {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Fechar ao pressionar Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('open')) {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    const lightboxImg = overlay.querySelector('.lightbox-img');
+    const lightboxCaption = overlay.querySelector('.lightbox-caption');
+
+    thumbs.forEach(thumb => {
+        // Acessibilidade
+        thumb.setAttribute('role', 'button');
+        thumb.setAttribute('tabindex', '0');
+
+        const openLightbox = () => {
+            const fullSrc = thumb.getAttribute('data-full') || thumb.src;
+            lightboxImg.src = fullSrc;
+            lightboxCaption.textContent = thumb.alt || '';
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Impede rolagem da página
+        };
+
+        thumb.addEventListener('click', openLightbox);
+        thumb.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox();
+            }
+        });
     });
 }

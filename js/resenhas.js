@@ -144,10 +144,14 @@ function goToGame(item) {
         digital: 'jogos-digitais',
         quadrinhos: 'quadrinhos',
         livros: 'livros',
-        filmes: 'filmes'
+        filmes: 'filmes-series'
     };
     const slug = categorySlugs[item.category] || item.category;
-    window.location.href = `/resenhas/${slug}/${item.id}`;
+    if (item.category === 'tabuleiro') {
+        window.location.href = `/${slug}/${item.id}`;
+    } else {
+        window.location.href = `/resenhas/${slug}/${item.id}`;
+    }
 }
 
 function getCatLabel(catId) {
