@@ -45,10 +45,11 @@ function initRentalLogic() {
     if (detailImage) {
         const coverEl = document.getElementById('detail-cover');
         if (coverEl) {
-            // O HTML está em jogos-tabuleiro/, então caminhos relativos precisam de ../
-            const coverPath = detailImage.startsWith('http')
+            // Páginas em resenhas/categoria/ são 2 níveis (../../), enquanto jogos-tabuleiro/ são 1 nível (../)
+            const pathPrefix = window.location.pathname.includes('/resenhas/') ? '../../' : '../';
+            const coverPath = (detailImage.startsWith('http') || detailImage.startsWith('/'))
                 ? detailImage
-                : '../' + detailImage;
+                : pathPrefix + detailImage;
             coverEl.src = coverPath;
             coverEl.alt = game.title;
         }
