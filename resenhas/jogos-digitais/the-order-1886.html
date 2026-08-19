@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review The Order: 1886 - Vale a pena jogar hoje?</title>
+    <meta name="description" content="Review The Order: 1886 - Vale a pena jogar hoje?">
+    <link rel="stylesheet" href="../../css/style.css?v=2">
+    <link rel="icon" type="image/png" href="../../images/icone.png">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+    <section class="banner-section"
+        style="position: relative; background: url('../../bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+        <a href="/">
+            <img src="../../logo-banner.png" alt="Logo Resenhas e Etc"
+                style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       MAIN NAVIGATION
+  ════════════════════════════════════════════ -->
+    <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
+        <ul class="nav-menu">
+            <li><a href="/">Início</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="no-pointer">Resenhas ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/resenhas/livros">Livros</a></li>
+                    <li><a href="/resenhas/jogos">Jogos</a></li>
+                    <li><a href="/resenhas/quadrinhos">Quadrinhos</a></li>
+                    <li><a href="/resenhas/filmes-series">Filmes/Séries</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" onclick="filterCategory('tabuleiro')">Jogos de tabuleiro ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/jogos-tabuleiro">Catálogo</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Como funciona</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Alugar agora</a></li>
+                    <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
+                </ul>
+            </li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="javascript:void(0)"
+                    onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Contato</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        window.filterCategory = function (cat) { window.location.href = '/index.html?cat=' + cat; };
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+       DETAIL CONTAINER
+  ════════════════════════════════════════════ -->
+    <main class="detail-container" id="detail-container">
+
+        <nav aria-label="breadcrumb" class="breadcrumb-container">
+            <ul class="breadcrumb">
+                <li><a href="/">Início</a></li>
+                <li><a href="/resenhas/jogos-digitais/" id="breadcrumb-category">Livros</a></li>
+                <li class="active" aria-current="page" id="breadcrumb-title">Review The Order: 1886 - Vale a pena jogar
+                    hoje?</li>
+            </ul>
+        </nav>
+
+        <div class="detail-grid">
+
+            <!-- ── LEFT: Cover + Quick Info ── -->
+            <div class="detail-cover-wrap">
+                <img id="detail-cover" src="../../images/metro-2033.jpg" alt="Metro 2033" class="detail-cover"
+                    loading="eager">
+                <div class="detail-quick-info" role="list" aria-label="Informações rápidas">
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">📆 Lançamento</span>
+                        <span class="quick-info-value" id="qi-author">02/2015</span>
+                    </div>
+                    <div class="quick-info-item" role="listitem">
+                        <span class="quick-info-label">🕹️ Plataformas</span>
+                        <span class="quick-info-value" id="qi-pages">PS4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── RIGHT: Info + Pricing + Calendar ── -->
+            <div class="detail-info">
+
+                <!-- Header -->
+                <div class="detail-header">
+                    <div class="detail-badges">
+                        <span class="detail-badge" id="detail-cat-badge">📖 Jogos digitais</span>
+                    </div>
+                    <h1 class="detail-title" id="detail-title">The Order 1886</h1>
+                    <div class="detail-rating" aria-label="Avaliação">
+                        <div class="stars" id="detail-stars" aria-hidden="true">★★★★☆</div>
+                        <span class="rating-text" id="detail-rating-text">4.0 / 5.0</span>
+                    </div>
+                    <p class="detail-desc" id="detail-desc">The Order: 1886 é um game que tem um significado especial
+                        para mim. Foi o trailer dele que colocou uma ideia fixa na minha cabeça: <i>“eu preciso de um
+                            PS4”</i>. Mais tarde, assistindo às gameplays, tive a certeza de que o investimento valeria
+                        a pena. Isso porque o exclusivo da Sony consegue unir uma porção de elementos que me agradam e
+                        faz com que funcionem muito bem em conjunto.</p>
+                </div>
+
+                <!-- ── ABOUT GAME SECTION ── -->
+                <section class="detail-block synopsis-section" aria-label="Sobre o livro">
+                    <h2>O fascinante universo de Londres vitoriana e steampunk</h2>
+                    <div id="detail-synopsis" class="detail-synopsis">
+                        <p>O jogo se passa no período da Revolução Industrial em uma Londres vitoriana. No entanto, ele
+                            aborda os avanços tecnológicos e econômicos de uma forma bem diferente da realidade que
+                            conhecemos. É aqui que a narrativa recebe uma bela dosagem de ficção científica, terror e
+                            ação. O universo de The Order: 1886 funciona como uma fusão perfeita entre o filme Van
+                            Helsing e a série Penny Dreadful.</p>
+
+                        <p>Neste cenário de ficção alternativa, encontramos diversos personagens bastante conhecidos da
+                            literatura e do mundo real:</p>
+
+                        <ul>
+                            <li><b>Nikola Tesla</b>: É o cientista responsável pela construção das armas incríveis e dos
+                                itens tecnológicos do game.</li>
+
+                            <li><b>Jack Estripador</b>: Vemos que alguns dos crimes bárbaros ocorridos na cidade são
+                                atribuídos a ele.</li>
+
+                            <li><b>Arthur Conan Doyle</b>: O comissário de polícia chama-se Doyle e está sempre soltando
+                                um emblemático "Elementar".</li>
+                        </ul>
+
+                        <p>Tudo isso somado a viagens de cavaleiros em zepelins e a caça a monstros em Londres tornam a
+                            ambientação do game, no mínimo, espetacular.</p>
+
+                        <h2>A história e os personagens de The Order: 1886</h2>
+
+                        <p>Logo que iniciamos a campanha, vemos que Londres passa por graves problemas políticos,
+                            refletidos nas manifestações das classes menos favorecidas. Além disso, há uma infestação de
+                            "mestiços" - humanos que se transformam em licantropos (lobisomens) - aterrorizando os
+                            distritos mais ricos do país.</p>
+
+                        <p>Para combater essa ameaça, existe A Ordem, uma sociedade de cavaleiros militares descendente
+                            direta da Távola Redonda, criada pelo Rei Arthur séculos atrás. É neste contexto que
+                            controlamos Grayson, o terceiro homem a ocupar o cargo de Sir Galahad. No comando dele,
+                            passamos a conhecer a fundo essa sociedade, seus objetivos e as prerrogativas pelas quais
+                            lutam.</p>
+
+                        <h2>Os membros do esquadrão:</h2>
+
+                        <ul>
+                            <li><b>Sir Percival (Sebastian Malory)</b>: Conselheiro e amigo de longa data de Galahad. É
+                                um dos
+                                poucos cavaleiros à sua altura em termos de força, habilidade e liderança.</li>
+
+                            <li><b>Lady Igraine (Isabeau D’Argyll)</b>: Aprendiz de Galahad, tornou-se extremamente
+                                habilidosa
+                                no campo de batalha e foi o membro mais jovem a adentrar na Ordem.</li>
+
+                            <li><b>Marquês de Lafayette</b>: Recrutado por seu gênio tático refinado durante a Guerra da
+                                Independência Americana e a Revolução Francesa, é o aprendiz de Sir Percival.</li>
+                        </ul>
+
+                        <h2>Gráficos, gameplay e o fator replay: Vale a pena?</h2>
+
+                        <p>No quesito visual, The Order: 1886 é um show à parte e envelheceu incrivelmente bem no
+                        PlayStation 4. O game possui um arsenal incrível que te obriga a testar arma por arma, desde as
+                        tradicionais pistolas e rifles até os projetos de Tesla, como a TS-23 Arc Induction Lance (minha
+                        favorita), que descarrega choques elétricos fatais.</p>
+
+                        <p>Na época do lançamento, o título recebeu muitas críticas severas referentes à sua curta duração.
+                        Particularmente, eu não concordo com a maioria delas; mesmo sendo um game 100% linear, a jornada
+                        me atendeu bastante.</p>
+
+                        <p>Onde o jogo realmente peca, ao meu ver, é em não oferecer um fator replay. Por não ter um modo
+                        online, colecionáveis mais profundos ou caminhos alternativos em um New Game Plus, é uma
+                        experiência de "uma jogada só". Ainda assim, pela sua rica história e gráficos cinematográficos,
+                        é um jogo que todo fã de ação e ficção deveria conhecer.</p>
+
+                        <!-- <div class="review-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=800&auto=format&fit=crop&q=80" 
+                                 alt="Trilhos escuros e misteriosos nos túneis do metrô" 
+                                 class="gallery-thumb">
+                            <div class="review-img-caption">Trilhos escuros e solitários do metrô de Moscou construindo a tensão claustrofóbica.</div>
+                        </div> -->                      
+
+                    </div>
+                </section>
+
+
+                <!-- ── ACTIONS (COMPRAR / ALUGAR) ── -->
+                <section class="actions-section"
+                    style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <a href="#" class="btn-primary" id="btn-buy"
+                        style="background: var(--orange); color: var(--white); font-size: 1rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .25rem .7rem; border-radius: 50px; line-height: normal;">Ver
+                        onde comprar</a>
+                </section>
+
+            </div><!-- /detail-info -->
+        </div><!-- /detail-grid -->
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+       RENTAL MODAL
+  ════════════════════════════════════════════ -->
+
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">🎲 Resenhas & Etc</div>
+                <p>Seu portal de referência para jogos de tabuleiro, digitais, quadrinhos, livros e filmes.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="/">Voltar a página inicial</a></li>
+                    <li><a href="/#tabuleiro">Jogos de tabuleiro</a></li>
+                    <li><a href="/#digital">Jogos digitais</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="/sobre">Sobre nós</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">E-mail</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Resenhas & Etc. Todos os direitos reservados.</span>
+        </div>
+    </footer>
+
+    <script src="../../js/data.js?v=2"></script>
+    <script src="../../js/game.js?v=2"></script>
+</body>
+
+</html>

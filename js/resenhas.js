@@ -30,62 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderCategoryContent(category, container) {
     container.innerHTML = '';
 
-    if (category === 'jogos') {
-        // Render games with digital and board games separated
-        const boardGames = CATALOG.filter(item => item.category === 'tabuleiro');
-        const digitalGames = CATALOG.filter(item => item.category === 'digital');
+    const categoryMap = {
+        'livros': 'livros',
+        'quadrinhos': 'quadrinhos',
+        'filmes-series': 'filmes',
+        'digital': 'digital',
+        'jogos-tabuleiro': 'tabuleiro'
+    };
+    const catId = categoryMap[category] || category;
+    const items = CATALOG.filter(item => item.category === catId);
 
-        // Section for Board Games
-        if (boardGames.length > 0) {
-            const secBoard = document.createElement('section');
-            secBoard.className = 'category-section';
-            secBoard.style.marginBottom = '3rem';
-            secBoard.innerHTML = `
-                <div class="section-header" style="margin-bottom: 1.5rem;">
-                    <h2 class="section-title">♟️ Jogos de Tabuleiro</h2>
-                </div>
-            `;
-            const grid = createCardGrid(boardGames);
-            secBoard.appendChild(grid);
-            container.appendChild(secBoard);
-        }
-
-        // Section for Digital Games
-        if (digitalGames.length > 0) {
-            const secDigital = document.createElement('section');
-            secDigital.className = 'category-section';
-            secDigital.innerHTML = `
-                <div class="section-header" style="margin-bottom: 1.5rem;">
-                    <h2 class="section-title">🎮 Jogos Digitais</h2>
-                </div>
-            `;
-            const grid = createCardGrid(digitalGames);
-            secDigital.appendChild(grid);
-            container.appendChild(secDigital);
-        }
-    } else {
-        // Standard single category rendering
-        // Map pageCategory to data.js category slugs
-        const categoryMap = {
-            'livros': 'livros',
-            'quadrinhos': 'quadrinhos',
-            'filmes-series': 'filmes'
-        };
-        const catId = categoryMap[category] || category;
-        const items = CATALOG.filter(item => item.category === catId);
-
-        if (items.length === 0) {
-            container.innerHTML = `
-                <div class="empty-state">
-                    <p>Nenhuma resenha disponível nesta categoria no momento.</p>
-                </div>
-            `;
-            return;
-        }
-
-        const grid = createCardGrid(items);
-        container.appendChild(grid);
+    if (items.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <p>Nenhuma resenha disponível nesta categoria no momento.</p>
+            </div>
+        `;
+        return;
     }
+
+    const grid = createCardGrid(items);
+    container.appendChild(grid);
 }
 
 function createCardGrid(items) {

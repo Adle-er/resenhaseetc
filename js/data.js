@@ -70,4 +70,14 @@ const CATALOG = [
     "rating": 3.0,
     "featured": true,
   },
+  {
+    "id": "the-order-1886",
+    "title": "The Order 1996",
+    "category": "digital",
+    "reviewOnly": true,
+    "tagline": "Conheça a brilhante e cinematográfica Londres vitoriana de Ready at Dawn. Acompanhe a jornada de Sir Galahad pelos segredos da Ordem em uma caçada profunda que mistura mitos, a genialidade de Tesla e um visual arrebatador. Vale a pena jogar hoje? Descubra!",
+    "cover": "images/metro-2033.jpg",
+    "rating": 4.0,
+    "featured": true,
+  },
 ];
