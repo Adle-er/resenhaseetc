@@ -76,7 +76,7 @@ const CATALOG = [
     "category": "digital",
     "reviewOnly": true,
     "tagline": "The Order: 1886 é um game que tem um significado especial para mim. Foi o trailer dele que colocou uma ideia fixa na minha cabeça: “eu preciso de um PS4”. Mais tarde, assistindo às gameplays, tive a certeza de que o investimento valeria a pena. Isso porque o exclusivo da Sony consegue unir uma porção de elementos que me agradam e faz com que funcionem muito bem em conjunto.",
-    "cover": "images/metro-2033.jpg",
+    "cover": "images/the-order-1886.jpg",
     "rating": 4.0,
     "featured": true,
   },
