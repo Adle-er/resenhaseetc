@@ -49,7 +49,7 @@ const CATALOG = [
     "category": "tabuleiro",
     "tagline": "Tiny Epic Dungeons é um jogo cooperativo de exploração onde heróis destemidos correm contra o tempo. Explore masmorras aleatórias, enfrente monstros, desarme armadilhas e colete saques épicos para conseguir derrotar o chefe supremo antes que a tocha do seu grupo se apague.",
     "cover": "images/tiny-epic-dungeons.jpg",
-    "coverDetail": "images/resenha-tiny-epic-dungeons.jpg",
+    "coverDetail": "images/tiny-epic-dungeons.jpg",
     "rating": 4.0,
     "ageRating": "+14 anos",
     "marketPrice": 189.9,
