@@ -75,7 +75,7 @@ const CATALOG = [
     "title": "The Order 1996",
     "category": "digital",
     "reviewOnly": true,
-    "tagline": "Conheça a brilhante e cinematográfica Londres vitoriana de Ready at Dawn. Acompanhe a jornada de Sir Galahad pelos segredos da Ordem em uma caçada profunda que mistura mitos, a genialidade de Tesla e um visual arrebatador. Vale a pena jogar hoje? Descubra!",
+    "tagline": "The Order: 1886 é um game que tem um significado especial para mim. Foi o trailer dele que colocou uma ideia fixa na minha cabeça: “eu preciso de um PS4”. Mais tarde, assistindo às gameplays, tive a certeza de que o investimento valeria a pena. Isso porque o exclusivo da Sony consegue unir uma porção de elementos que me agradam e faz com que funcionem muito bem em conjunto.",
     "cover": "images/metro-2033.jpg",
     "rating": 4.0,
     "featured": true,
