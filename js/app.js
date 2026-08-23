@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCategory = urlParams.get('cat') || 'todos';
     let searchQuery = '';
 
-    // Tabs were replaced by the main navigation dropdowns
-
     // ── SEARCH ────────────────────────────────────────────
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
@@ -24,12 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainArea = document.getElementById('main-area');
         mainArea.innerHTML = '';
 
-        let filtered = CATALOG.filter(item => {
+        // Combine CATALOG items and BLOG_POSTS items
+        const allItems = (typeof BLOG_POSTS !== 'undefined') ? [...BLOG_POSTS, ...CATALOG] : CATALOG;
+
+        let filtered = allItems.filter(item => {
             const matchCat = currentCategory === 'todos' || item.category === currentCategory;
             const matchSearch = !searchQuery ||
                 item.title.toLowerCase().includes(searchQuery) ||
-                item.tagline.toLowerCase().includes(searchQuery) ||
-                item.description.toLowerCase().includes(searchQuery);
+                (item.tagline && item.tagline.toLowerCase().includes(searchQuery)) ||
+                (item.excerpt && item.excerpt.toLowerCase().includes(searchQuery)) ||
+                (item.description && item.description.toLowerCase().includes(searchQuery));
             return matchCat && matchSearch;
         });
 
@@ -45,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Featured section (only on 'todos' without search)
         if (currentCategory === 'todos' && !searchQuery) {
-            renderFeatured(mainArea, filtered);
+            renderFeatured(mainArea, allItems);
         }
 
         // Grouped sections by category
@@ -71,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── FEATURED BLOCK ────────────────────────────────────
     function renderFeatured(container, items) {
         const featured = items.filter(g => g.featured);
-        if (featured.length < 2) return;
+        if (featured.length === 0) return;
 
         const main = featured.find(g => g.featuredMain) || featured[0];
         const sides = featured.filter(g => g.id !== main.id).slice(0, 3);
@@ -91,53 +93,61 @@ document.addEventListener('DOMContentLoaded', () => {
         mainCard.className = 'featured-card';
         mainCard.onclick = () => goToGame(main);
         
-        let mainBriefDesc = main.tagline || '';
+        let mainBriefDesc = main.tagline || main.excerpt || '';
         if (!mainBriefDesc && main.description) {
             const firstParagraph = main.description.split('\n')[0];
             mainBriefDesc = firstParagraph.length > 150 ? firstParagraph.substring(0, 150) + '...' : firstParagraph;
         }
 
+        const mainBadge = main.categoryLabel || getCatLabel(main.category);
+        const mainMetaRating = main.rating ? `⭐ ${main.rating}` : (main.readTime || 'Última Postagem');
+
         mainCard.innerHTML = `
       <img src="${main.cover}" alt="${main.title}" class="featured-thumb" loading="lazy">
       <div class="featured-info">
         <div class="featured-meta">
-          <span class="featured-badge">${getCatLabel(main.category)}</span>
-          <span>⭐ ${main.rating}</span>
+          <span class="featured-badge">${mainBadge}</span>
+          <span>${mainMetaRating}</span>
           ${main.isRentable ? '<span>Disponível para aluguel</span>' : ''}
         </div>
         <h2 class="featured-title">${main.title}</h2>
         <p class="featured-desc">${mainBriefDesc}</p>
-        <span class="btn-featured">Ver completo <span>→</span></span>
+        <span class="btn-featured">${main.isBlog ? 'Ler artigo' : 'Ver completo'} <span>→</span></span>
       </div>
     `;
         grid.appendChild(mainCard);
 
         // Side cards
-        const sideCol = document.createElement('div');
-        sideCol.className = 'featured-side';
-        sides.forEach(item => {
-            const sideCard = document.createElement('div');
-            sideCard.className = 'featured-side-card';
-            sideCard.onclick = () => goToGame(item);
-            
-            let sideBriefDesc = item.tagline || '';
-            if (!sideBriefDesc && item.description) {
-                const firstParagraph = item.description.split('\n')[0];
-                sideBriefDesc = firstParagraph.length > 150 ? firstParagraph.substring(0, 150) + '...' : firstParagraph;
-            }
+        if (sides.length > 0) {
+            const sideCol = document.createElement('div');
+            sideCol.className = 'featured-side';
+            sides.forEach(item => {
+                const sideCard = document.createElement('div');
+                sideCard.className = 'featured-side-card';
+                sideCard.onclick = () => goToGame(item);
+                
+                let sideBriefDesc = item.tagline || item.excerpt || '';
+                if (!sideBriefDesc && item.description) {
+                    const firstParagraph = item.description.split('\n')[0];
+                    sideBriefDesc = firstParagraph.length > 150 ? firstParagraph.substring(0, 150) + '...' : firstParagraph;
+                }
 
-            sideCard.innerHTML = `
-        <img src="${item.cover}" alt="${item.title}" class="featured-side-thumb" loading="lazy">
-        <div class="featured-side-info">
-          <span class="featured-side-badge">${getCatLabel(item.category)}</span>
-          <div class="featured-side-title">${item.title}</div>
-          <p class="featured-side-desc">${sideBriefDesc}</p>
-          <span style="font-size:0.75rem;color:var(--primary-light);margin-top:0.4rem;display:block;">⭐ ${item.rating} — Ver completo →</span>
-        </div>
-      `;
-            sideCol.appendChild(sideCard);
-        });
-        grid.appendChild(sideCol);
+                const sideBadge = item.categoryLabel || getCatLabel(item.category);
+                const sideMetaRating = item.rating ? `⭐ ${item.rating}` : (item.date || 'Postagem');
+
+                sideCard.innerHTML = `
+            <img src="${item.cover}" alt="${item.title}" class="featured-side-thumb" loading="lazy">
+            <div class="featured-side-info">
+              <span class="featured-side-badge">${sideBadge}</span>
+              <div class="featured-side-title">${item.title}</div>
+              <p class="featured-side-desc">${sideBriefDesc}</p>
+              <span style="font-size:0.75rem;color:var(--primary-light);margin-top:0.4rem;display:block;">${sideMetaRating} — Ler mais →</span>
+            </div>
+          `;
+                sideCol.appendChild(sideCard);
+            });
+            grid.appendChild(sideCol);
+        }
 
         section.appendChild(grid);
         container.appendChild(section);
@@ -150,7 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'digital': 'jogos',
             'livros': 'livros',
             'quadrinhos': 'quadrinhos',
-            'filmes': 'filmes-series'
+            'filmes': 'filmes-series',
+            'etc': 'etc'
         };
 
         const slug = urlSlugs[cat.id] || cat.id;
@@ -158,6 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectionUrl = `/resenhas/${slug}`;
         if (cat.id === 'tabuleiro') {
             sectionUrl = `/jogos-tabuleiro`;
+        } else if (cat.id === 'etc') {
+            sectionUrl = `/etc`;
         }
 
         const section = document.createElement('div');
@@ -191,34 +204,36 @@ document.addEventListener('DOMContentLoaded', () => {
         card.setAttribute('aria-label', `Ver detalhes de ${item.title}`);
         card.onkeydown = (e) => { if (e.key === 'Enter') goToGame(item); };
 
-        const stars = renderStars(item.rating);
-        let priceStr = 'Resenha';
+        const stars = item.rating ? `${renderStars(item.rating)} ${item.rating}` : (item.date || 'Postagem');
+        let priceStr = item.isBlog ? 'Artigo Blog' : 'Resenha';
         if (item.isRentable && item.rental7) {
             priceStr = `Aluguel a partir de R$ ${item.rental7.toFixed(2).replace('.', ',')}`;
         } else if (item.marketPrice) {
             priceStr = `R$ ${item.marketPrice.toFixed(2).replace('.', ',')}`;
         }
 
-        let cardBriefDesc = item.tagline || '';
+        let cardBriefDesc = item.tagline || item.excerpt || '';
         if (!cardBriefDesc && item.description) {
             const firstParagraph = item.description.split('\n')[0];
             cardBriefDesc = firstParagraph.length > 150 ? firstParagraph.substring(0, 150) + '...' : firstParagraph;
         }
 
+        const badgeLabel = item.categoryLabel || getCatLabel(item.category);
+
         card.innerHTML = `
       <div class="card-cover-wrap">
         <img src="${item.cover}" alt="${item.title}" class="card-cover" loading="lazy">
-        <span class="card-badge">${getCatLabel(item.category)}</span>
+        <span class="card-badge">${badgeLabel}</span>
         ${item.isRentable ? '<span class="card-rentable-badge">Aluguel</span>' : ''}
       </div>
       <div class="card-body">
         <div class="card-title">${item.title}</div>
         <p class="card-tagline">${cardBriefDesc}</p>
         <div class="card-meta">
-          <span class="card-rating">${stars} ${item.rating}</span>
+          <span class="card-rating">${stars}</span>
           <span class="card-price">${priceStr}</span>
         </div>
-        <button class="btn-card">Ver completo</button>
+        <button class="btn-card">${item.isBlog ? 'Ler artigo' : 'Ver completo'}</button>
       </div>
     `;
         return card;
@@ -226,6 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── HELPERS ───────────────────────────────────────────
     function goToGame(item) {
+        if (item.isBlog || item.url) {
+            window.location.href = item.url || `/etc/${item.id}`;
+            return;
+        }
+
         const categorySlugs = {
             tabuleiro: 'jogos-tabuleiro',
             digital: 'jogos-digitais',
@@ -266,12 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── INITIALIZE DATA ───────────────────────────────────
     function init() {
         try {
-            // CATALOG is globally available from js/data.js
+            // CATALOG & BLOG_POSTS are globally available from js/data.js
             
             // ── HERO ACTIVE STATS ─────────────────────────────────
             const boardGamesCount = CATALOG.filter(g => g.category === 'tabuleiro').length;
             const rentableCount = CATALOG.filter(g => g.isRentable).length;
-            const totalCount = CATALOG.length;
+            const totalCount = CATALOG.length + (typeof BLOG_POSTS !== 'undefined' ? BLOG_POSTS.length : 0);
             const statEl = document.querySelectorAll('.hero-stat-num');
             if (statEl.length >= 3) {
                 statEl[0].textContent = totalCount + '+';
@@ -285,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Erro ao carregar o catálogo:', err);
             document.getElementById('main-area').innerHTML = `
                 <div class="empty-state">
-                    <p>Erro ao carregar os dados. Certifique-se de que o servidor Node.js está rodando.</p>
+                    <p>Erro ao carregar os dados. Certifique-se de que os arquivos JS estão carregados.</p>
                 </div>
             `;
         }

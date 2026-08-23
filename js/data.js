@@ -2,17 +2,10 @@
 // RESENHAS & ETC — CATÁLOGO DE DADOS
 // ============================================================
 // JOGOS DE TABULEIRO: possuem isRentable, affiliateLink, preços.
-// DEMAIS CATEGORIAS (digital, quadrinhos, livros, filmes):
-//   são SOMENTE RESENHA — sem preço, sem aluguel, sem afiliado.
+// DEMAIS CATEGORIAS (digital, quadrinhos, livros, filmes, blog):
+//   são SOMENTE RESENHA / BLOG — sem preço, sem aluguel, sem afiliado.
 //   Marque reviewOnly: true nesses itens.
 // ============================================================
-//
-// CAMPOS DE IMAGEM:
-//   cover        → imagem exibida nos cards do index.html
-//   coverDetail  → imagem exibida na página individual do jogo
-//                  (se omitido, usa cover como fallback)
-// ============================================================
-
 
 // ─── METADADOS DAS CATEGORIAS ───────────────────────────
 const CATEGORIES = [
@@ -22,14 +15,77 @@ const CATEGORIES = [
   { id: "quadrinhos", label: "Quadrinhos", icon: "📚" },
   { id: "livros", label: "Livros", icon: "📖" },
   { id: "filmes", label: "Filmes / Séries", icon: "🎬" },
+  { id: "etc", label: "Etecétera (Blog)", icon: "✨" },
 ];
 
-// ─── CONFIGURAÇÃO DO GOOGLE CALENDAR ───────────────────
-const GOOGLE_CALENDAR_CONFIG = {
-  apiKey: "SUA_API_KEY_AQUI",
-  calendarId: "SEU_CALENDAR_ID_AQUI",
-  demoMode: true,
-};
+// ─── POSTAGENS DO BLOG (ETECÉTERA) ──────────────────────
+const BLOG_POSTS = [
+  {
+    id: "lancamentos-tabuleiro-2026",
+    title: "Os Lançamentos de Jogos de Tabuleiro Mais Aguardados do Ano",
+    category: "etc",
+    blogCategory: "lancamentos",
+    categoryLabel: "🚀 Lançamentos",
+    date: "18 de Agosto, 2026",
+    readTime: "5 min de leitura",
+    author: "Equipe Resenhas & Etc",
+    cover: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Confira a seleção imperdível dos maiores títulos e expansões de jogos de tabuleiro confirmados para o mercado nacional e internacional nesta temporada.",
+    excerpt: "Confira a seleção imperdível dos maiores títulos e expansões de jogos de tabuleiro confirmados para o mercado nacional e internacional nesta temporada.",
+    featured: true,
+    featuredMain: true,
+    isBlog: true,
+    url: "/etc/lancamentos-tabuleiro-2026"
+  },
+  {
+    id: "lancamentos-digitais-destaques",
+    title: "Lançamentos Digitais: Games que Prometem Dominar os Consoles e PC",
+    category: "etc",
+    blogCategory: "lancamentos",
+    categoryLabel: "🚀 Lançamentos",
+    date: "15 de Agosto, 2026",
+    readTime: "4 min de leitura",
+    author: "Redação Games",
+    cover: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+    tagline: "Uma visão geral dos jogos eletrônicos mais promissores lançados recentemente, abrangendo de grandes produções RPGs a títulos indie criativos.",
+    excerpt: "Uma visão geral dos jogos eletrônicos mais promissores lançados recentemente, abrangendo de grandes produções RPGs a títulos indie criativos.",
+    featured: true,
+    isBlog: true,
+    url: "/etc/lancamentos-digitais-destaques"
+  },
+  {
+    id: "novidades-mercado-editorial",
+    title: "Lançamentos Literários e Quadrinhos: O Que Ler a Seguir",
+    category: "etc",
+    blogCategory: "lancamentos",
+    categoryLabel: "🚀 Lançamentos",
+    date: "10 de Agosto, 2026",
+    readTime: "6 min de leitura",
+    author: "Curadoria de Livros & HQ",
+    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+    tagline: "Confira as obras literárias e graphic novels recém-chegadas às livrarias que estão dando o que falar entre leitores e críticos.",
+    excerpt: "Confira as obras literárias e graphic novels recém-chegadas às livrarias que estão dando o que falar entre leitores e críticos.",
+    featured: false,
+    isBlog: true,
+    url: "/etc/novidades-mercado-editorial"
+  },
+  {
+    id: "bastidores-resenhas-etc",
+    title: "Bem-vindo ao Etecétera: O Novo Espaço de Notícias e Artigos do Projeto",
+    category: "etc",
+    blogCategory: "noticias",
+    categoryLabel: "📰 Notícias",
+    date: "01 de Agosto, 2026",
+    readTime: "3 min de leitura",
+    author: "Resenhas & Etc",
+    cover: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
+    tagline: "Apresentamos o nosso canal de blog oficial! Aqui você acompanhará notícias, coberturas de lançamentos e conteúdos especiais além das nossas resenhas.",
+    excerpt: "Apresentamos o nosso canal de blog oficial! Aqui você acompanhará notícias, coberturas de lançamentos e conteúdos especiais além das nossas resenhas.",
+    featured: false,
+    isBlog: true,
+    url: "/etc/bastidores-resenhas-etc"
+  }
+];
 
 // ─── DATAS BLOQUEADAS DE DEMONSTRAÇÃO ──────────────────
 function getDemoBlockedDates(gameId) {
@@ -41,7 +97,7 @@ function getDemoBlockedDates(gameId) {
   return days.map(d => `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`);
 }
 
-
+// ─── CATÁLOGO DE RESENHAS E JOGOS ───────────────────────
 const CATALOG = [
   {
     "id": "tiny-epic-dungeons",
@@ -58,7 +114,6 @@ const CATALOG = [
     "affiliateLink": "#",
     "isRentable": true,
     "featured": true,
-    "featuredMain": true,
   },
   {
     "id": "metro-2033",
