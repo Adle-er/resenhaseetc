@@ -25,7 +25,7 @@ const BLOG_POSTS = [
     title: "Vazamentos de GTA 6: O que se sabe até o momento",
     category: "noticias",
     blogCategory: "noticias",
-    categoryLabel: "🚀 Notícias",
+    categoryLabel: "📰 Notícias",
     date: "23 de Agosto, 2026",
     readTime: "7 min de leitura",
     author: "Resenhas & Etc",

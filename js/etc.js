@@ -4,17 +4,17 @@
 
 const BLOG_POSTS = [
   {
-    id: "lancamentos-tabuleiro-2026",
-    title: "Os Lançamentos de Jogos de Tabuleiro Mais Aguardados do Ano",
-    category: "lancamentos",
-    categoryLabel: "🚀 Lançamentos",
-    date: "18 de Agosto, 2026",
-    readTime: "5 min de leitura",
-    author: "Equipe Resenhas & Etc",
+    id: "vazamentos-gta-vi",
+    title: "Vazamentos de GTA 6: O que se sabe até o momento",
+    category: "noticias",
+    categoryLabel: "📰 Notícias",
+    date: "23 de Agosto, 2026",
+    readTime: "7 min de leitura",
+    author: "Resenhas & Etc",
     cover: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=1200&q=80",
-    excerpt: "Confira a seleção imperdível dos maiores títulos e expansões de jogos de tabuleiro confirmados para o mercado nacional e internacional nesta temporada.",
-    featured: true
-  }
+    excerpt: "Confira o resumo completo dos vazamentos de GTA 6, com vídeos do Cyberleek, reação da Take-Two e data da gameplay oficial.",
+    featured: true    
+  }  
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
