@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo ao Etecétera: O Novo Espaço de Notícias e Artigos do Projeto — Etecétera | Resenhas & Etc</title>
+  <meta name="description" content="Apresentamos o nosso canal de blog oficial! Notícias, bastidores, coberturas de lançamentos e conteúdos especiais.">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="icon" type="image/png" href="../images/icone.png">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HERO BANNER
+  ════════════════════════════════════════════ -->
+  <section class="banner-section"
+    style="position: relative; background: url('../bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+    <a href="/">
+      <img src="../logo-banner.png" alt="Logo Resenhas e Etc"
+        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav class="main-nav" role="navigation" aria-label="Navegação Principal">
+    <ul class="nav-menu">
+      <li><a href="/">Início</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="no-pointer">Resenhas ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="/resenhas/livros">Livros</a></li>
+          <li><a href="/resenhas/jogos">Jogos</a></li>
+          <li><a href="/resenhas/quadrinhos">Quadrinhos</a></li>
+          <li><a href="/resenhas/filmes-series">Filmes/Séries</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="/jogos-tabuleiro">Jogos de tabuleiro ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="/jogos-tabuleiro">Catálogo</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Como funciona</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Alugar agora</a></li>
+          <li><a href="javascript:void(0)" onclick="alert('Página em construção!')">Planos</a></li>
+        </ul>
+      </li>
+      <li><a href="/sobre">Sobre</a></li>
+      <li><a href="/etc" style="color: var(--orange); font-weight: 700;">Etecétera</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    window.filterCategory = function (cat) { window.location.href = '/?cat=' + cat; };
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════ -->
+  <main class="main-content" id="main-content" aria-live="polite">
+    <div style="max-width: 860px; margin: 2.5rem auto; padding: 0 1.2rem;">
+      
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="breadcrumb-container" style="margin-bottom: 2rem;">
+        <ul class="breadcrumb" style="display: flex; gap: 0.5rem; list-style: none; padding: 0; flex-wrap: wrap;">
+          <li><a href="/" style="color: var(--orange); text-decoration: none; font-weight: 600;">Início</a></li>
+          <li style="color: var(--text-muted);">/</li>
+          <li><a href="/etc" style="color: var(--orange); text-decoration: none; font-weight: 600;">Etecétera</a></li>
+          <li style="color: var(--text-muted);">/</li>
+          <li class="active" aria-current="page" style="color: var(--text); font-weight: 600;">Bem-vindo ao Etecétera...</li>
+        </ul>
+      </nav>
+
+      <!-- Article Header -->
+      <article style="background: var(--white); padding: 3rem 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+        
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap;">
+          <span class="blog-badge" style="position: static; display: inline-block;">📰 Notícias</span>
+          <span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 500;">📅 01 de Agosto, 2026</span>
+          <span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 500;">⏱️ 3 min de leitura</span>
+        </div>
+
+        <h1 style="font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; color: var(--text); line-height: 1.2; margin-bottom: 1.2rem;">
+          Bem-vindo ao Etecétera: O Novo Espaço de Notícias e Artigos do Projeto
+        </h1>
+
+        <div style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 2rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); font-weight: 500;">
+          Por <strong>Resenhas & Etc</strong>
+        </div>
+
+        <!-- Featured Image -->
+        <div style="margin-bottom: 2.5rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm);">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" 
+               alt="Espaço do blog Etecétera" 
+               style="width: 100%; max-height: 480px; object-fit: cover;">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-body-content" style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">
+          <p style="font-size: 1.2rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            É com muita alegria que inauguramos a seção <strong>Etecétera</strong>!
+          </p>
+
+          <p>Além das nossas tradicionais resenhas de jogos de tabuleiro, games digitais, livros, quadrinhos e filmes, este espaço será dedicado a artigos mais dinâmicos, análises de lançamentos, guias de compras e novidades do projeto.</p>
+
+          <p>Fique de olho e acompanhe as nossas atualizações periódicas!</p>
+        </div>
+
+        <!-- Article Footer Navigation -->
+        <div style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <a href="/etc" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--orange); color: var(--white); padding: 0.75rem 1.8rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: var(--transition);">
+            ← Voltar para o Etecétera
+          </a>
+          <span style="color: var(--text-muted); font-size: 0.92rem; font-weight: 500;">
+            Obrigado por acompanhar o projeto! ✨
+          </span>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">🎲 Resenhas & Etc</div>
+        <p>Seu portal de referência para jogos de tabuleiro, digitais, quadrinhos, livros e filmes. Resenhas honestas,
+          dicas e aluguel de jogos.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="#" onclick="filterCategory('tabuleiro');return false;">Jogos de tabuleiro</a></li>
+          <li><a href="#" onclick="filterCategory('digital');return false;">Jogos digitais</a></li>
+          <li><a href="#" onclick="filterCategory('quadrinhos');return false;">Quadrinhos</a></li>
+          <li><a href="#" onclick="filterCategory('livros');return false;">Livros</a></li>
+          <li><a href="#" onclick="filterCategory('filmes');return false;">Filmes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Aluguel</h4>
+        <ul>
+          <li><a href="#" onclick="filterCategory('tabuleiro');return false;">Como funciona</a></li>
+          <li><a href="#" onclick="filterCategory('tabuleiro');return false;">Jogos disponíveis</a></li>
+          <li><a href="#">Regras de aluguel</a></li>
+          <li><a href="#">Frete e entrega</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato & Blog</h4>
+        <ul>
+          <li><a href="/sobre">Sobre nós</a></li>
+          <li><a href="/etc">Blog Etecétera</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Resenhas & Etc. Todos os direitos reservados.</span>
+      <span>Feito com 🎲 para amantes de jogos e cultura</span>
+    </div>
+  </footer>  
+
+</body>
+
+</html>
