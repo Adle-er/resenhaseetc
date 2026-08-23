@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etecétera — Blog & Lançamentos | Resenhas & Etc</title>
-  <meta name="description" content="Blog oficial do Resenhas & Etc. Acompanhe os principais lançamentos, notícias e artigos sobre jogos de tabuleiro, games digitais, livros, quadrinhos e cinema.">
-  <link rel="stylesheet" href="css/style.css?v=2">
-  <link rel="icon" type="image/png" href="images/icone.png">
+  <title>Lançamentos — Etecétera Blog | Resenhas & Etc</title>
+  <meta name="description" content="Confira todos os lançamentos e novidades de jogos de tabuleiro, games digitais, livros e HQ's no blog Etecétera.">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="icon" type="image/png" href="../images/icone.png">
 </head>
 
-<body data-category="todos">
+<body data-category="lancamentos">
 
   <!-- ═══════════════════════════════════════════
        HERO BANNER
   ════════════════════════════════════════════ -->
   <section class="banner-section"
-    style="position: relative; background: url('bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+    style="position: relative; background: url('../bg-banner.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); height: 380px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
     <a href="/">
-      <img src="logo-banner.png" alt="Logo Resenhas e Etc"
+      <img src="../logo-banner.png" alt="Logo Resenhas e Etc"
         style="max-width: 100%; max-height: 100%; object-fit: contain;">
     </a>
   </section>
@@ -67,24 +67,26 @@
         <ul class="breadcrumb" style="display: flex; gap: 0.5rem; list-style: none; padding: 0;">
           <li><a href="/" style="color: var(--orange); text-decoration: none; font-weight: 600;">Início</a></li>
           <li style="color: var(--text-muted);">/</li>
-          <li class="active" aria-current="page" style="color: var(--text); font-weight: 600;">Etecétera (Blog)</li>
+          <li><a href="/etc" style="color: var(--orange); text-decoration: none; font-weight: 600;">Etecétera</a></li>
+          <li style="color: var(--text-muted);">/</li>
+          <li class="active" aria-current="page" style="color: var(--text); font-weight: 600;">Lançamentos</li>
         </ul>
       </nav>
 
       <!-- Page Header -->
       <div class="category-page-header" style="margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
         <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 0.8rem; margin: 0 0 0.5rem 0;">
-          ✨ Etecétera
+          🚀 Lançamentos
         </h1>
         <p style="color: var(--text-secondary); margin: 0; font-size: 1.1rem;">
-          O blog oficial do Resenhas & Etc. Notícias, análises de lançamentos e conteúdos especiais sobre cultura pop e entretenimento.
+          Acompanhe as últimas novidades e os lançamentos mais aguardados de jogos de tabuleiro, games, literatura e quadrinhos.
         </p>
       </div>
 
       <!-- Category Filter Pills (Direct URLs) -->
       <div class="blog-category-pills" role="navigation" aria-label="Filtro de Categorias do Blog">
-        <a href="/etc" class="blog-category-pill active">📌 Todos os Posts</a>
-        <a href="/etc/lancamentos" class="blog-category-pill">🚀 Lançamentos</a>
+        <a href="/etc" class="blog-category-pill">📌 Todos os Posts</a>
+        <a href="/etc/lancamentos" class="blog-category-pill active">🚀 Lançamentos</a>
         <a href="/etc/noticias" class="blog-category-pill">📰 Notícias</a>
       </div>
 
@@ -140,7 +142,7 @@
     </div>
   </footer>  
 
-  <script src="js/etc.js?v=2"></script>
+  <script src="../js/etc.js?v=2"></script>
 </body>
 
 </html>

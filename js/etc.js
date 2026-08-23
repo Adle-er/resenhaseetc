@@ -53,37 +53,37 @@ const BLOG_POSTS = [
   }
 ];
 
-let currentCategory = 'todos';
-
 document.addEventListener('DOMContentLoaded', () => {
-  renderBlogPage();
+  const bodyEl = document.querySelector('body[data-category]');
+  const pageCategory = bodyEl ? bodyEl.getAttribute('data-category') : 'todos';
+  renderBlogPage(pageCategory);
 });
 
-function renderBlogPage() {
+function renderBlogPage(category) {
   const container = document.getElementById('blog-container');
   if (!container) return;
 
   container.innerHTML = '';
 
-  // Filter posts based on currentCategory
-  const filtered = currentCategory === 'todos'
+  // Filter posts based on category
+  const filtered = (category === 'todos' || !category)
     ? BLOG_POSTS
-    : BLOG_POSTS.filter(post => post.category === currentCategory);
+    : BLOG_POSTS.filter(post => post.category === category);
 
   if (filtered.length === 0) {
     container.innerHTML = `
       <div class="empty-state" style="text-align: center; padding: 4rem 1rem;">
         <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
-        <p style="color: var(--text-secondary); font-size: 1.1rem;">Nenhum artigo encontrado para a categoria selecionada.</p>
+        <p style="color: var(--text-secondary); font-size: 1.1rem;">Nenhum artigo encontrado nesta categoria no momento.</p>
       </div>
     `;
     return;
   }
 
-  // Highlighted / Featured Post (if category is 'todos' or 'lancamentos')
-  const featuredPost = filtered.find(p => p.featured) || (currentCategory === 'lancamentos' ? filtered[0] : null);
+  // Highlighted / Featured Post
+  const featuredPost = filtered.find(p => p.featured) || (category === 'lancamentos' ? filtered[0] : null);
 
-  if (featuredPost && currentCategory !== 'noticias') {
+  if (featuredPost && category !== 'noticias') {
     const featuredHTML = createFeaturedPostCard(featuredPost);
     container.appendChild(featuredHTML);
   }
@@ -97,7 +97,7 @@ function renderBlogPage() {
     sectionHeader.style.margin = '2.5rem 0 1.5rem';
     sectionHeader.innerHTML = `
       <h2 class="section-title" style="font-size: 1.6rem; font-weight: 800; color: var(--text);">
-        ${currentCategory === 'lancamentos' ? '🚀 Mais Lançamentos & Destaques' : '📰 Últimas Publicações'}
+        ${category === 'lancamentos' ? '🚀 Mais Lançamentos & Destaques' : '📰 Publicações'}
       </h2>
     `;
     container.appendChild(sectionHeader);
@@ -167,19 +167,4 @@ function createPostCard(post) {
   return card;
 }
 
-function filterBlogCategory(category, btnElement) {
-  currentCategory = category;
-
-  // Update active pill styling
-  const pills = document.querySelectorAll('.blog-category-pill');
-  pills.forEach(p => p.classList.remove('active'));
-  if (btnElement) {
-    btnElement.classList.add('active');
-  }
-
-  renderBlogPage();
-}
-
-// Expose functions to global window scope for inline onclicks
-window.filterBlogCategory = filterBlogCategory;
 window.goToPost = goToPost;
