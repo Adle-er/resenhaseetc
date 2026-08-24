@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "node generate-sitemap.js"
+  },
+  "dependencies": {
+    "sitemap": "^9.0.1"
+  }
+}
