@@ -13,7 +13,7 @@ if (typeof BLOG_POSTS === 'undefined') {
       date: "23 de Agosto, 2026",
       readTime: "7 min de leitura",
       author: "Resenhas & Etc",
-      cover: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=1200&q=80",
+      cover: "../images/vazamentos-gta-vi.webp",
       excerpt: "Confira o resumo completo dos vazamentos de GTA 6, com vídeos do Cyberleek, reação da Take-Two e data da gameplay oficial.",
       featured: true,
       url: "/etc/vazamentos-gta-vi"
