@@ -13,9 +13,9 @@ if (typeof BLOG_POSTS === 'undefined') {
       date: "03 de setembro de 2026",
       readTime: "5 min de leitura",
       author: "Resenhas & Etc",
-      cover: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80",
-      excerpt: "Durante o State of Play, a PlayStation anunciou duas edições limitadas dos controles DualSense temáticos de GTA 6. O Dualsense de GTA 6 será lançado em duas versões: branca e preta, contando com acabamento cintilante que muda de cor, evocando o pôr do sol e as luzes de neon da cidade de Vice City. AContinue reading \"PlayStation anuncia Dualsense temático de GTA 6\" O post PlayStation anuncia Dualsense temático de GTA 6 apareceu primeiro em Sucumba Games.",
-      featured: false,
+      cover: "images/playstation-anuncia-dualsense-tematico-de-gta-6.webp",
+      excerpt: "Durante o State of Play, a PlayStation anunciou duas edições limitadas dos controles DualSense temáticos de GTA 6, nas versões branca e preta inspiradas em Vice City.",
+      featured: true,
       url: "/etc/playstation-anuncia-dualsense-tematico-de-gta-6"
     },
     {
@@ -26,63 +26,63 @@ if (typeof BLOG_POSTS === 'undefined') {
       date: "23 de Agosto, 2026",
       readTime: "10 min de leitura",
       author: "Resenhas & Etc",
-      cover: "../images/vazamentos-gta-vi.webp",
+      cover: "images/vazamentos-gta-vi.webp",
       excerpt: "Confira o resumo completo dos vazamentos de GTA 6, com vídeos do Cyberleek, reação da Take-Two e data da gameplay oficial.",
       featured: true,
       url: "/etc/vazamentos-gta-vi"
+    },
+    {
+      id: "lancamentos-tabuleiro-2026",
+      title: "Os Lançamentos de Jogos de Tabuleiro Mais Aguardados do Ano",
+      category: "lancamentos",
+      categoryLabel: "🚀 Lançamentos",
+      date: "18 de Agosto, 2026",
+      readTime: "5 min de leitura",
+      author: "Equipe Resenhas & Etc",
+      cover: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=1200&q=80",
+      excerpt: "Confira a seleção imperdível dos maiores títulos e expansões de jogos de tabuleiro confirmados para o mercado nacional e internacional nesta temporada.",
+      featured: true,
+      url: "/etc/lancamentos-tabuleiro-2026"
+    },
+    {
+      id: "lancamentos-digitais-destaques",
+      title: "Lançamentos Digitais: Games que Prometem Dominar os Consoles e PC",
+      category: "lancamentos",
+      categoryLabel: "🚀 Lançamentos",
+      date: "15 de Agosto, 2026",
+      readTime: "4 min de leitura",
+      author: "Redação Games",
+      cover: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+      excerpt: "Uma visão geral dos jogos eletrônicos mais promissores lançados recentemente, abrangendo de grandes produções RPGs a títulos indie criativos.",
+      featured: true,
+      url: "/etc/lancamentos-digitais-destaques"
+    },
+    {
+      id: "novidades-mercado-editorial",
+      title: "Lançamentos Literários e Quadrinhos: O Que Ler a Seguir",
+      category: "lancamentos",
+      categoryLabel: "🚀 Lançamentos",
+      date: "10 de Agosto, 2026",
+      readTime: "6 min de leitura",
+      author: "Curadoria de Livros & HQ",
+      cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+      excerpt: "Confira as obras literárias e graphic novels recém-chegadas às livrarias que estão dando o que falar entre leitores e críticos.",
+      featured: false,
+      url: "/etc/novidades-mercado-editorial"
+    },
+    {
+      id: "bastidores-resenhas-etc",
+      title: "Bem-vindo ao Etecétera: O Novo Espaço de Notícias e Artigos do Projeto",
+      category: "noticias",
+      categoryLabel: "📰 Notícias",
+      date: "01 de Agosto, 2026",
+      readTime: "3 min de leitura",
+      author: "Resenhas & Etc",
+      cover: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
+      excerpt: "Apresentamos o nosso canal de blog oficial! Aqui você acompanhará notícias, coberturas de lançamentos e conteúdos especiais além das nossas resenhas.",
+      featured: false,
+      url: "/etc/bastidores-resenhas-etc"
     }
-    // {
-    //   id: "lancamentos-tabuleiro-2026",
-    //   title: "Os Lançamentos de Jogos de Tabuleiro Mais Aguardados do Ano",
-    //   category: "lancamentos",
-    //   categoryLabel: "🚀 Lançamentos",
-    //   date: "18 de Agosto, 2026",
-    //   readTime: "5 min de leitura",
-    //   author: "Equipe Resenhas & Etc",
-    //   cover: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=1200&q=80",
-    //   excerpt: "Confira a seleção imperdível dos maiores títulos e expansões de jogos de tabuleiro confirmados para o mercado nacional e internacional nesta temporada.",
-    //   featured: true,
-    //   url: "/etc/lancamentos-tabuleiro-2026"
-    // },
-    // {
-    //   id: "lancamentos-digitais-destaques",
-    //   title: "Lançamentos Digitais: Games que Prometem Dominar os Consoles e PC",
-    //   category: "lancamentos",
-    //   categoryLabel: "🚀 Lançamentos",
-    //   date: "15 de Agosto, 2026",
-    //   readTime: "4 min de leitura",
-    //   author: "Redação Games",
-    //   cover: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
-    //   excerpt: "Uma visão geral dos jogos eletrônicos mais promissores lançados recentemente, abrangendo de grandes produções RPGs a títulos indie criativos.",
-    //   featured: true,
-    //   url: "/etc/lancamentos-digitais-destaques"
-    // },
-    // {
-    //   id: "novidades-mercado-editorial",
-    //   title: "Lançamentos Literários e Quadrinhos: O Que Ler a Seguir",
-    //   category: "lancamentos",
-    //   categoryLabel: "🚀 Lançamentos",
-    //   date: "10 de Agosto, 2026",
-    //   readTime: "6 min de leitura",
-    //   author: "Curadoria de Livros & HQ",
-    //   cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
-    //   excerpt: "Confira as obras literárias e graphic novels recém-chegadas às livrarias que estão dando o que falar entre leitores e críticos.",
-    //   featured: false,
-    //   url: "/etc/novidades-mercado-editorial"
-    // },
-    // {
-    //   id: "bastidores-resenhas-etc",
-    //   title: "Bem-vindo ao Etecétera: O Novo Espaço de Notícias e Artigos do Projeto",
-    //   category: "noticias",
-    //   categoryLabel: "📰 Notícias",
-    //   date: "01 de Agosto, 2026",
-    //   readTime: "3 min de leitura",
-    //   author: "Resenhas & Etc",
-    //   cover: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
-    //   excerpt: "Apresentamos o nosso canal de blog oficial! Aqui você acompanhará notícias, coberturas de lançamentos e conteúdos especiais além das nossas resenhas.",
-    //   featured: false,
-    //   url: "/etc/bastidores-resenhas-etc"
-    // }
   ];
 }
 

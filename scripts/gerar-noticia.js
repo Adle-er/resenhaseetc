@@ -244,7 +244,7 @@ async function main() {
   }
 
   console.log(`\n==================================================`);
-  console.log(`  PROCESSANDO MATÉRIA COMO ORIGINAL DO RESENHAS & ETC:`);
+  console.log(`  PROCESSANDO MATÉRIA COMO DESTAQUE PRINCIPAL:`);
   console.log(`  Título: ${articleToProcess.title}`);
   console.log(`==================================================\n`);
 
@@ -447,7 +447,7 @@ async function main() {
   fs.writeFileSync(htmlFilePath, htmlContent, 'utf8');
   console.log(`\n✅ Página criada com sucesso: etc/${htmlFileName}`);
 
-  // Update js/data.js and js/etc.js
+  // Update js/data.js and js/etc.js with latest post placed first + featuredMain: true
   const postEntry = {
     id: slug,
     title: articleToProcess.title,
@@ -459,7 +459,8 @@ async function main() {
     cover: articleToProcess.image,
     tagline: (fullArticleData.paragraphs[0] || articleToProcess.description || articleToProcess.title),
     excerpt: (fullArticleData.paragraphs[0] || articleToProcess.description || articleToProcess.title),
-    featured: false,
+    featured: true,
+    featuredMain: true,
     isBlog: true,
     url: `/etc/${slug}`
   };
@@ -468,7 +469,7 @@ async function main() {
   updateEtcJs(postEntry);
   updateSitemap(slug);
 
-  console.log('\n🎉 Notícia publicada originalmente como Resenhas & Etc com vídeo embutido com sucesso!');
+  console.log('\n🎉 Notícia publicada e definida como DESTAQUE PRINCIPAL na home e no blog!');
   rl.close();
 }
 
@@ -476,19 +477,22 @@ function updateDataJs(entry) {
   const dataPath = path.join(ROOT_DIR, 'js', 'data.js');
   let content = fs.readFileSync(dataPath, 'utf8');
 
-  // Check if entry already exists
-  if (content.includes(`id: "${entry.id}"`)) {
-    console.log('ℹ️ Registro já existe no js/data.js.');
-    return;
+  // Clear featuredMain from older posts in file
+  content = content.replace(/featuredMain:\s*true,?/g, 'featuredMain: false,');
+
+  // If entry already exists, update its entry or place at top
+  const idPattern = new RegExp(`{\\s*id:\\s*"${entry.id}"[\\s\\S]*?},`, 'g');
+  if (idPattern.test(content)) {
+    content = content.replace(idPattern, '');
   }
 
   const marker = 'const BLOG_POSTS = [';
   if (content.includes(marker)) {
-    const entryString = `  {\n    id: "${entry.id}",\n    title: "${entry.title.replace(/"/g, '\\"')}",\n    category: "${entry.category}",\n    categoryLabel: "${entry.categoryLabel}",\n    date: "${entry.date}",\n    readTime: "${entry.readTime}",\n    author: "${entry.author}",\n    cover: "${entry.cover}",\n    tagline: "${entry.tagline.replace(/"/g, '\\"')}",\n    excerpt: "${entry.excerpt.replace(/"/g, '\\"')}",\n    featured: false,\n    isBlog: true,\n    url: "${entry.url}"\n  },`;
+    const entryString = `  {\n    id: "${entry.id}",\n    title: "${entry.title.replace(/"/g, '\\"')}",\n    category: "${entry.category}",\n    categoryLabel: "${entry.categoryLabel}",\n    date: "${entry.date}",\n    readTime: "${entry.readTime}",\n    author: "${entry.author}",\n    cover: "${entry.cover}",\n    tagline: "${entry.tagline.replace(/"/g, '\\"')}",\n    excerpt: "${entry.excerpt.replace(/"/g, '\\"')}",\n    featured: true,\n    featuredMain: true,\n    isBlog: true,\n    url: "${entry.url}"\n  },`;
     
     content = content.replace(marker, `${marker}\n${entryString}`);
     fs.writeFileSync(dataPath, content, 'utf8');
-    console.log('✅ js/data.js atualizado.');
+    console.log('✅ js/data.js atualizado com o novo destaque no topo.');
   }
 }
 
@@ -496,18 +500,18 @@ function updateEtcJs(entry) {
   const etcPath = path.join(ROOT_DIR, 'js', 'etc.js');
   let content = fs.readFileSync(etcPath, 'utf8');
 
-  if (content.includes(`id: "${entry.id}"`)) {
-    console.log('ℹ️ Registro já existe no js/etc.js.');
-    return;
+  const idPattern = new RegExp(`{\\s*id:\\s*"${entry.id}"[\\s\\S]*?},`, 'g');
+  if (idPattern.test(content)) {
+    content = content.replace(idPattern, '');
   }
 
   const marker = 'window.BLOG_POSTS = [';
   if (content.includes(marker)) {
-    const entryString = `    {\n      id: "${entry.id}",\n      title: "${entry.title.replace(/"/g, '\\"')}",\n      category: "${entry.category}",\n      categoryLabel: "${entry.categoryLabel}",\n      date: "${entry.date}",\n      readTime: "${entry.readTime}",\n      author: "${entry.author}",\n      cover: "${entry.cover}",\n      excerpt: "${entry.excerpt.replace(/"/g, '\\"')}",\n      featured: false,\n      url: "${entry.url}"\n    },`;
+    const entryString = `    {\n      id: "${entry.id}",\n      title: "${entry.title.replace(/"/g, '\\"')}",\n      category: "${entry.category}",\n      categoryLabel: "${entry.categoryLabel}",\n      date: "${entry.date}",\n      readTime: "${entry.readTime}",\n      author: "${entry.author}",\n      cover: "${entry.cover}",\n      excerpt: "${entry.excerpt.replace(/"/g, '\\"')}",\n      featured: true,\n      url: "${entry.url}"\n    },`;
     
     content = content.replace(marker, `${marker}\n${entryString}`);
     fs.writeFileSync(etcPath, content, 'utf8');
-    console.log('✅ js/etc.js atualizado.');
+    console.log('✅ js/etc.js atualizado com o novo destaque no topo.');
   }
 }
 
@@ -517,7 +521,6 @@ function updateSitemap(slug) {
 
   let content = fs.readFileSync(sitemapPath, 'utf8');
   if (content.includes(`/etc/${slug}`)) {
-    console.log('ℹ️ URL já existe no sitemap.xml.');
     return;
   }
 
