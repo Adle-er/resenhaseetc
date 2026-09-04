@@ -1,10 +1,4 @@
 User-agent: *
 Allow: /
 
-# Bloqueio de arquivos e diretórios de sistema
-Disallow: /css/
-Disallow: /js/
-Disallow: /admin/
-
-# Localização do Sitemap oficial
 Sitemap: https://www.resenhaseetc.com.br/sitemap.xml

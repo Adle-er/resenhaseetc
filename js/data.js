@@ -21,6 +21,21 @@ const CATEGORIES = [
 // ─── POSTAGENS DO BLOG (ETECÉTERA) ──────────────────────
 const BLOG_POSTS = [
   {
+    id: "playstation-anuncia-dualsense-tematico-de-gta-6",
+    title: "PlayStation anuncia Dualsense temático de GTA 6",
+    category: "noticias",
+    categoryLabel: "📰 Notícias",
+    date: "03 de setembro de 2026",
+    readTime: "5 min de leitura",
+    author: "Resenhas & Etc",
+    cover: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Durante o State of Play, a PlayStation anunciou duas edições limitadas dos controles DualSense temáticos de GTA 6. O Dualsense de GTA 6 será lançado em duas versões: branca e preta, contando com acabamento cintilante que muda de cor, evocando o pôr do sol e as luzes de neon da cidade de Vice City. AContinue reading \"PlayStation anuncia Dualsense temático de GTA 6\" O post PlayStation anuncia Dualsense temático de GTA 6 apareceu primeiro em Sucumba Games.",
+    excerpt: "Durante o State of Play, a PlayStation anunciou duas edições limitadas dos controles DualSense temáticos de GTA 6. O Dualsense de GTA 6 será lançado em duas versões: branca e preta, contando com acabamento cintilante que muda de cor, evocando o pôr do sol e as luzes de neon da cidade de Vice City. AContinue reading \"PlayStation anuncia Dualsense temático de GTA 6\" O post PlayStation anuncia Dualsense temático de GTA 6 apareceu primeiro em Sucumba Games.",
+    featured: false,
+    isBlog: true,
+    url: "/etc/playstation-anuncia-dualsense-tematico-de-gta-6"
+  },
+  {
     id: "vazamentos-gta-vi",
     title: "Vazamentos de GTA 6: O que se sabe até o momento",
     category: "noticias",
