@@ -68,31 +68,13 @@
 
   <!-- MATÉRIAS DO BLOG -->
   <url>
+    <loc>https://www.resenhaseetc.com.br/etc/playstation-anuncia-dualsense-tematico-de-gta-6</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.resenhaseetc.com.br/etc/vazamentos-gta-vi</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/etc/lancamentos-tabuleiro-2026</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/etc/lancamentos-digitais-destaques</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/etc/novidades-mercado-editorial</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/etc/bastidores-resenhas-etc</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -193,12 +175,6 @@
   </url>
   <url>
     <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/ticket-to-ride</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/etc/playstation-anuncia-dualsense-tematico-de-gta-6</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
