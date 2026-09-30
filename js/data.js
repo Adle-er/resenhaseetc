@@ -102,4 +102,14 @@ const CATALOG = [
     "rating": 4.0,
     "featured": true,
   },
+  {
+    "id": "drop-duchy",
+    "title": "Drop Duchy: A mistura perfeita de Tetris, Civilization e Slay the Spire",
+    "category": "tabuleiro",
+    "tagline": "O que esperar de um jogo que mistura Tetris, Civilization e Slay the Spire? Drop Duchy, entrega muito como roguelite de construção de deck e blocos.",
+    "cover": "images/drop-duchy.jpg",
+    "coverDetail": "images/drop-duchy.jpg",
+    "rating": 4.0,
+    "ageRating": "+14 anos",
+  },
 ];
