@@ -148,16 +148,18 @@
               fúria.</li>
           </ul>
 
-          <div class="review-img-wrap">
-            <img src="../../images/tipo-carta-drop-duchy-01.jpg"
-              alt="Árvore de habilidades Drop Duchy" class="gallery-thumb">
-            <div class="review-img-caption">Parte da árvore de habilidades presente no jogo.</div>
-          </div>
+          <div class="review-img-row">
+            <div class="review-img-wrap">
+              <img src="../../images/tipo-carta-drop-duchy-01.jpg"
+                alt="Tipos de cartas Drop Duchy 01" class="gallery-thumb">
+              <div class="review-img-caption">Cartas de Facção no jogo.</div>
+            </div>
 
-          <div class="review-img-wrap">
-            <img src="../../images/tipo-carta-drop-duchy-02.jpg"
-              alt="Árvore de habilidades Drop Duchy" class="gallery-thumb">
-            <div class="review-img-caption">Parte da árvore de habilidades presente no jogo.</div>
+            <div class="review-img-wrap">
+              <img src="../../images/tipo-carta-drop-duchy-02.jpg"
+                alt="Tipos de cartas Drop Duchy 02" class="gallery-thumb">
+              <div class="review-img-caption">Cartas de Facção no jogo.</div>
+            </div>
           </div>
 
           <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text); margin: 2rem 0 1rem;">A preparação e o
@@ -210,6 +212,112 @@
 
     </div>
   </main>
+
+  <style>
+    /* Side-by-Side Images Row (Exclusivo Drop Duchy) */
+    .review-img-row {
+      display: flex;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .review-img-row .review-img-wrap {
+      flex: 1;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .review-img-row {
+        flex-direction: column;
+      }
+    }
+
+    /* Lightbox Overlay em Destaque (Translúcido com Leve tom Laranja e site visível ao fundo) */
+    .lightbox-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 107, 0, 0.08);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 1.5rem;
+    }
+
+    .lightbox-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: var(--radius-lg, 12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 40px rgba(255, 107, 0, 0.25);
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      transform: scale(0.92);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: zoom-out;
+    }
+
+    .lightbox-overlay.active img {
+      transform: scale(1.04);
+    }
+
+    .article-body-content img,
+    .gallery-thumb {
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+    }
+
+    .article-body-content img:hover,
+    .gallery-thumb:hover {
+      transform: scale(1.02);
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Lightbox Overlay especifico de Drop Duchy
+      const overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.setAttribute('aria-hidden', 'true');
+      overlay.innerHTML = '<img src="" alt="Imagem em destaque">';
+      document.body.appendChild(overlay);
+
+      const lightboxImg = overlay.querySelector('img');
+      const targetImages = document.querySelectorAll('.article-body-content img, .gallery-thumb, article img');
+
+      targetImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          lightboxImg.src = img.currentSrc || img.src;
+          lightboxImg.alt = img.alt || 'Imagem da resenha';
+          overlay.classList.add('active');
+          overlay.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden', 'true');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+          overlay.classList.remove('active');
+          overlay.setAttribute('aria-hidden', 'true');
+        }
+      });
+    });
+  </script>
 
   <script src="../../js/nav.js?v=2"></script>
 </body>
