@@ -32,7 +32,7 @@ const BLOG_POSTS = [
     tagline: "Durante o State of Play, a PlayStation anunciou duas edições limitadas dos controles DualSense temáticos de GTA 6, nas versões branca e preta inspiradas em Vice City.",
     excerpt: "Durante o State of Play, a PlayStation anunciou duas edições limitadas dos controles DualSense temáticos de GTA 6, nas versões branca e preta inspiradas em Vice City.",
     featured: true,
-    featuredMain: true,
+    featuredMain: false,
     isBlog: true,
     url: "/etc/playstation-anuncia-dualsense-tematico-de-gta-6"
   },
@@ -105,11 +105,13 @@ const CATALOG = [
   {
     "id": "drop-duchy",
     "title": "Drop Duchy: A mistura perfeita de Tetris, Civilization e Slay the Spire",
-    "category": "tabuleiro",
+    "category": "digital",
     "tagline": "O que esperar de um jogo que mistura Tetris, Civilization e Slay the Spire? Drop Duchy, entrega muito como roguelite de construção de deck e blocos.",
     "cover": "images/drop-duchy.jpg",
     "coverDetail": "images/drop-duchy.jpg",
     "rating": 4.0,
     "ageRating": "+14 anos",
+    "featured": true,
+    "featuredMain": true,
   },
 ];
