@@ -59,12 +59,6 @@
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/etc/noticias</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
 
   <!-- MATÉRIAS DO BLOG -->
   <url>
@@ -88,60 +82,18 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/livros/vinte-mil-leguas</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/jogos-digitais/hades</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/jogos-digitais/hollow-knight</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/jogos-digitais/stardew-valley</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.resenhaseetc.com.br/resenhas/jogos-digitais/the-order-1886</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/quadrinhos/saga</loc>
-    <lastmod>2026-09-04</lastmod>
+    <loc>https://www.resenhaseetc.com.br/resenhas/jogos-digitais/drop-duchy</loc>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/quadrinhos/watchmen</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/filmes-series/2001-odisseia</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/resenhas/filmes-series/everything-everywhere</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+  
   <!-- JOGOS DE TABULEIRO -->
   <url>
     <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/tiny-epic-dungeons</loc>
@@ -149,34 +101,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/coup</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/dixit</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/pandemic</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/scythe</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.resenhaseetc.com.br/jogos-tabuleiro/ticket-to-ride</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
 </urlset>
